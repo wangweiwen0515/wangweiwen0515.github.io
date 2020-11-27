@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-atom.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wangweiwen0515.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="javaScript基础教程1.javaScript简介：1.1javascript的历史：要了解JavaScript，我们首先要回顾一下JavaScript的诞生。 在上个世纪的1995年，当时的网景公司正凭借其Navigator浏览器成为Web时代开启时最著名的第一代互联网公司。 由于网景公司希望能在静态HTML页面上添加一些动态效果，于是叫Brendan Eich这哥们在两周之内设计出了Ja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaScript基础知识">
+<meta property="og:url" content="http://wangweiwen0515.github.io/2020/10/19/javaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="waven&#39;s blog">
+<meta property="og:description" content="javaScript基础教程1.javaScript简介：1.1javascript的历史：要了解JavaScript，我们首先要回顾一下JavaScript的诞生。 在上个世纪的1995年，当时的网景公司正凭借其Navigator浏览器成为Web时代开启时最著名的第一代互联网公司。 由于网景公司希望能在静态HTML页面上添加一些动态效果，于是叫Brendan Eich这哥们在两周之内设计出了Ja">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-19T08:59:20.000Z">
+<meta property="article:modified_time" content="2020-11-27T08:32:01.238Z">
+<meta property="article:author" content="waven">
+<meta property="article:tag" content="js基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://wangweiwen0515.github.io/2020/10/19/javaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>javaScript基础知识 | waven's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="waven's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">waven's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">always smile</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wangweiwen0515.github.io/2020/10/19/javaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="waven">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="waven's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          javaScript基础知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-10-19 16:59:20" itemprop="dateCreated datePublished" datetime="2020-10-19T16:59:20+08:00">2020-10-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-27 16:32:01" itemprop="dateModified" datetime="2020-11-27T16:32:01+08:00">2020-11-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="javaScript基础教程"><a href="#javaScript基础教程" class="headerlink" title="javaScript基础教程"></a>javaScript基础教程</h1><h2 id="1-javaScript简介："><a href="#1-javaScript简介：" class="headerlink" title="1.javaScript简介："></a>1.javaScript简介：</h2><h3 id="1-1javascript的历史："><a href="#1-1javascript的历史：" class="headerlink" title="1.1javascript的历史："></a>1.1javascript的历史：</h3><p>要了解JavaScript，我们首先要回顾一下JavaScript的诞生。</p>
+<p>在上个世纪的1995年，当时的网景公司正凭借其Navigator浏览器成为Web时代开启时最著名的第一代互联网公司。</p>
+<p>由于网景公司希望能在静态HTML页面上添加一些动态效果，于是叫Brendan Eich这哥们在两周之内设计出了JavaScript语言。你没看错，这哥们只用了10天时间。</p>
+<p>为什么起名叫JavaScript？原因是当时Java语言非常红火，所以网景公司希望借Java的名气来推广，但事实上JavaScript除了语法上有点像Java，其他部分基本上没啥关系。</p>
+<a id="more"></a>
+
+<h3 id="1-2ECMAScript"><a href="#1-2ECMAScript" class="headerlink" title="1.2ECMAScript"></a>1.2ECMAScript</h3><p>因为网景开发了JavaScript，一年后微软又模仿JavaScript开发了JScript，为了让JavaScript成为全球标准，几个公司联合ECMA（European Computer Manufacturers Association）组织定制了JavaScript语言的标准，被称为ECMAScript标准。</p>
+<p>所以简单说来就是，ECMAScript是一种语言标准，而JavaScript是网景公司对ECMAScript标准的一种实现。</p>
+<p>那为什么不直接把JavaScript定为标准呢？因为JavaScript是网景的注册商标。</p>
+<p>不过大多数时候，我们还是用JavaScript这个词。如果你遇到ECMAScript这个词，简单把它替换为JavaScript就行了。</p>
+<h3 id="1-3JavaScript版本"><a href="#1-3JavaScript版本" class="headerlink" title="1.3JavaScript版本"></a><strong>1.3JavaScript版本</strong></h3><p>JavaScript语言是在10天时间内设计出来的，虽然语言的设计者水平非常NB，但谁也架不住“时间紧，任务重”，所以，JavaScript有很多设计缺陷，我们后面会慢慢讲到。</p>
+<p>此外，由于JavaScript的标准——ECMAScript在不断发展，最新版ECMAScript 6标准（简称ES6）已经在2015年6月正式发布了，所以，讲到JavaScript的版本，实际上就是说它实现了ECMAScript标准的哪个版本。</p>
+<p>由于浏览器在发布时就确定了JavaScript的版本，加上很多用户还在使用IE6这种古老的浏览器，这就导致你在写JavaScript的时候，要照顾一下老用户，不能一上来就用最新的ES6标准写，否则，老用户的浏览器是无法运行新版本的JavaScript代码的。</p>
+<p>不过，JavaScript的核心语法并没有多大变化。我们的教程会先讲JavaScript最核心的用法，然后，针对ES6讲解新增特性。</p>
+<h2 id="2-Js基本数据类型："><a href="#2-Js基本数据类型：" class="headerlink" title="2.Js基本数据类型："></a>2.Js基本数据类型：</h2><h3 id="2-1number"><a href="#2-1number" class="headerlink" title="2.1number"></a>2.1number</h3><p>javascript是不区分浮点数和整数的，统一用number表示，一下都是合法的number类型：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span>; <span class="comment">// 整数123 </span></span><br><span class="line"><span class="number">0.456</span>; <span class="comment">// 浮点数0.456 </span></span><br><span class="line"><span class="number">1.2345e3</span>; <span class="comment">// 科学计数法表示1.2345x1000，等同于1234.5 </span></span><br><span class="line">-<span class="number">99</span>; <span class="comment">// 负数 </span></span><br><span class="line"><span class="literal">NaN</span>; <span class="comment">// NaN表示Not a Number，当无法计算结果时用NaN表示 </span></span><br><span class="line"><span class="literal">Infinity</span>; <span class="comment">// Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就 表示为Infinity</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2string"><a href="#2-2string" class="headerlink" title="2.2string"></a>2.2string</h3><p>字符串是以单引号’或双引号”括起来的任意文本，比如 ‘abc’ ， “xyz” 等等。请注意， ‘’ 或 “” 本身只是一种表示方式，不是字符串的一部分，因此，字符串 ‘abc’ 只有a ， b ， c 这3个字符。</p>
+<h3 id="2-3boolean"><a href="#2-3boolean" class="headerlink" title="2.3boolean"></a>2.3boolean</h3><p>2.3.1布尔值和布尔代数的表示完全一致，一个布尔值只有 true 、 false 两种值，要么是 true ，要么是 false ，可以直接用 true 、 false 表示布尔值，也可以通过布尔运算计算出来：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span>; <span class="comment">// 这是一个true值 </span></span><br><span class="line"><span class="literal">false</span>; <span class="comment">// 这是一个false值 </span></span><br><span class="line"><span class="number">2</span> &gt; <span class="number">1</span>; <span class="comment">// 这是一个true值 </span></span><br><span class="line"><span class="number">2</span> &gt;= <span class="number">3</span>; <span class="comment">// 这是一个false值</span></span><br></pre></td></tr></table></figure>
+
+<p>2.3.2运算</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为true </span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为false </span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为false</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为false </span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为true </span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4null和undefined"><a href="#2-4null和undefined" class="headerlink" title="2.4null和undefined"></a>2.4null和undefined</h3><p>null 表示一个“空”的值，它和 0 以及空字符串 ‘’ 不同， 0 是一个数值， ‘’ 表示长度为0的字符串，而 null 表示“空”。</p>
+<p>在其他语言中，也有类似JavaScript的 null 的表示，例如Java也用 null ，Swift用 nil ，Python用 None 表示。但是，在JavaScript中，还有一个和 null 类似的 undefined ，它表示“未定义”。</p>
+<h3 id="2-5Object"><a href="#2-5Object" class="headerlink" title="2.5Object"></a>2.5Object</h3><p><strong>对象分为内建对象和宿主对象，内建对象例如Array，Date，Math等。除了内建对象，还可以在js脚本里使用一些预先定义好的其他对象。这些对象不是由js语言本身而是由他的运行环境提供的。具体到web应用，这个环境就是浏览器。由浏览器预先编译好的对象称为宿主对象，包括Form，Image，Element。</strong></p>
+<p>JavaScript的对象是一组由键-值组成的无序集合，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">     name:<span class="string">&#x27;weiwen&#x27;</span>,</span><br><span class="line">     age:<span class="number">23</span>,</span><br><span class="line">     intrest:[<span class="string">&#x27;js&#x27;</span>,<span class="string">&#x27;web&#x27;</span>,<span class="string">&#x27;java&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JavaScript对象的键都是字符串类型，值可以是任意数据类型。上述 person 对象一共定义了6个键值对，其中每个键又称为对象的属性.</p>
+<p>要获取一个对象的属性，我们用 对象变量.属性名 的方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.name<span class="comment">//weiwen</span></span><br><span class="line">person.age<span class="comment">//23</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6Symbol-es6新标准"><a href="#2-6Symbol-es6新标准" class="headerlink" title="2.6Symbol (es6新标准)"></a>2.6Symbol (es6新标准)</h3><p>表示一个独一无二的值，最大的用法是用来定义对象的唯一属性名。引入symbol是因为es5的对象中的属性名是字符串，容易造成属性名的冲突。使用方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sy = <span class="built_in">Symbol</span>(<span class="string">&quot;key&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> syObject = &#123;&#125;;</span><br><span class="line">syObject[sy] = <span class="string">&quot;weiwen&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(syObject)  <span class="comment">//&#123;Symbol(key): &quot;weiwen&quot;&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-数组"><a href="#3-数组" class="headerlink" title="3.数组"></a>3.数组</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p>JavaScript的 Array 可以包含任意数据类型，并通过索引来访问每个元素。要取得 Array 的长度，直接访问 <strong>length</strong> 属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3.14</span>, <span class="string">&#x27;Hello&#x27;</span>, <span class="literal">null</span>, <span class="literal">true</span>]; </span><br><span class="line">arr.length; <span class="comment">// 6 </span></span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意，直接给 Array 的 length 赋一个新的值会导致 Array 大小的变化</strong>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr.length; <span class="comment">// 3 </span></span><br><span class="line">arr.length = <span class="number">6</span>; arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, undefined] </span></span><br><span class="line">arr.length = <span class="number">2</span>; arr; <span class="comment">// arr变为[1, 2]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Array 可以通过索引把对应的元素修改为新的值，因此，对 Array 的索引进行赋值会直接修改这个 Array</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">99</span>; </span><br><span class="line">arr; <span class="comment">// arr现在变为[&#x27;A&#x27;, 99, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意，如果通过索引赋值时，索引超过了范围，同样会引起 Array 大小的变化：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr[<span class="number">5</span>] = <span class="string">&#x27;x&#x27;</span>; </span><br><span class="line">arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, &#x27;x&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常见用法："><a href="#常见用法：" class="headerlink" title="常见用法："></a><strong>常见用法：</strong></h3><h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a><strong>indexOf</strong></h4><p><strong>与String类似， Array 也可以通过 indexOf() 来搜索一个指定的元素的位置：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="string">&#x27;30&#x27;</span>, <span class="string">&#x27;xyz&#x27;</span>]; </span><br><span class="line">arr.indexOf(<span class="number">10</span>); <span class="comment">// 元素10的索引为0 </span></span><br><span class="line">arr.indexOf(<span class="number">20</span>); <span class="comment">// 元素20的索引为1 </span></span><br><span class="line">arr.indexOf(<span class="number">30</span>); <span class="comment">// 元素30没有找到，返回-1 </span></span><br><span class="line">arr.indexOf(<span class="string">&#x27;30&#x27;</span>); <span class="comment">// 元素&#x27;30&#x27;的索引为2</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h4><p><strong>slice() 就是对应String的 substring() 版本，它截取 Array 的部分元素，然后返回一个新的 Array</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>]; </span><br><span class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// 从索引0开始，到索引3结束，但不包括索引3: [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;] </span></span><br><span class="line">arr.slice(<span class="number">3</span>); <span class="comment">// 从索引3开始到结束: [&#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;] </span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> aCopy = arr.slice(); </span><br><span class="line">aCopy; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;] </span></span><br><span class="line">aCopy === arr; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="push和pop"><a href="#push和pop" class="headerlink" title="push和pop"></a>push和pop</h4><p><strong>push()</strong> 向 Array 的<strong>末尾</strong>添加若干元素， <strong>pop()</strong> 则把 Array 的<strong>最后一个元素</strong>删除掉</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]; </span><br><span class="line">arr.push(<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>); <span class="comment">// 返回Array新的长度: 4 arr; // [1, 2, &#x27;A&#x27;, &#x27;B&#x27;] </span></span><br><span class="line">arr.pop(); <span class="comment">// pop()返回&#x27;B&#x27; </span></span><br><span class="line">arr; <span class="comment">// [1, 2, &#x27;A&#x27;] </span></span><br><span class="line">arr.pop(); arr.pop(); arr.pop(); <span class="comment">// 连续pop 3次 arr; // [] </span></span><br><span class="line">arr.pop(); <span class="comment">// 空数组继续pop不会报错，而是返回undefined</span></span><br><span class="line">arr; <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="unshift和shift"><a href="#unshift和shift" class="headerlink" title="unshift和shift"></a>unshift和shift</h4><p>如果要往 Array 的<strong>头部</strong>添加若干元素，使用 unshift() 方法， shift() 方法则把Array 的第一个元素删掉：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]; </span><br><span class="line">arr.unshift(<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>); <span class="comment">// 返回Array新的长度: 4 </span></span><br><span class="line">arr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, 1, 2] </span></span><br><span class="line">arr.shift(); <span class="comment">// &#x27;A&#x27; </span></span><br><span class="line">arr; <span class="comment">// [&#x27;B&#x27;, 1, 2] </span></span><br><span class="line">arr.shift(); arr.shift(); arr.shift(); <span class="comment">// 连续shift 3次 </span></span><br><span class="line">arr; <span class="comment">// [] </span></span><br><span class="line">arr.shift(); <span class="comment">// 空数组继续shift不会报错，而是返回undefined </span></span><br><span class="line">arr; <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><p>sort() 可以对当前 Array 进行<strong>排序</strong>，它会直接修改当前 Array 的元素位置，直接调用时，按照默认顺序排序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;A&#x27;</span>]; </span><br><span class="line">arr.sort(); </span><br><span class="line">rr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><p>reverse() 把整个 Array 的元素给掉个个，也就是<strong>反转</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>]; </span><br><span class="line">arr.reverse(); </span><br><span class="line">rr; <span class="comment">// [&#x27;three&#x27;, &#x27;two&#x27;, &#x27;one&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h4><p>splice() 方法是修改 Array 的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素</p>
+<p><strong>语法：arrayObject.splice(index,howmany,item1,…..,itemX)</strong></p>
+<p>index：必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</p>
+<p>howmany：必需。要删除的项目数量。如果设置为 0，则不会删除项目。</p>
+<p>item1, …, itemX：可选。向数组添加的新项目。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">23</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">2</span>,<span class="number">11</span>,<span class="number">22</span>)<span class="comment">//返回删除的元素 [1, 2]</span></span><br><span class="line">arr <span class="comment">//(7) [11, 22, 23, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">//只删除不添加</span></span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">2</span>) <span class="comment">//(2) [11, 22]</span></span><br><span class="line">arr <span class="comment">//(5) [23, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">//只添加不删除</span></span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">0</span>,<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>)  <span class="comment">//[]</span></span><br><span class="line">arr  <span class="comment">//(8) [11, 22, 33, 23, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h4><p>concat() 方法把当前的 Array 和另一个 Array 连接起来，并返回一个新的 Array </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> added = arr.concat([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); </span><br><span class="line">added; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, 1, 2, 3] </span></span><br><span class="line">arr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p>请注意， concat() 方法并没有修改当前 Array ，而是返回了一个新的 Array 。实际上， concat() 方法可以接收任意个元素和 Array ，并且自动把 Array 拆开，然后全部添加到新的 Array 里：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line">arr.concat(<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, 1, 2, 3, 4] </span></span><br></pre></td></tr></table></figure>
+
+<h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><p>join() 方法是一个非常实用的方法，它把当前 Array 的每个元素都用指定的字符串连接起来，然后返回连接后的字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr.join(<span class="string">&#x27;-&#x27;</span>); <span class="comment">// &#x27;A-B-C-1-2-3&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h4><p>如果数组的某个元素又是一个 Array ，则可以形成多维数组，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">400</span>, <span class="number">500</span>, <span class="number">600</span>], <span class="string">&#x27;-&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>上述 Array 包含3个元素，其中头两个元素本身也是 Array 。</p>
+<p>练习：如何通过索引取到 500 这个值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = arr[<span class="number">1</span>][<span class="number">2</span>]; </span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// x应该为500 </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-流程控制："><a href="#4-流程控制：" class="headerlink" title="4.流程控制："></a>4.流程控制：</h3><h4 id="4-1for循环"><a href="#4-1for循环" class="headerlink" title="4.1for循环"></a>4.1for循环</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr= [<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;ali&#x27;</span>,<span class="string">&#x27;tengxun&#x27;</span>]</span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;arr.length();i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2无限循环"><a href="#4-2无限循环" class="headerlink" title="4.2无限循环"></a>4.2无限循环</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">for</span> (;;) &#123; </span><br><span class="line">    <span class="comment">// 将无限循环下去 </span></span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">100</span>) &#123; <span class="keyword">break</span>;<span class="comment">// 通过if判断来退出循环 &#125;</span></span><br><span class="line">     x ++;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-3for-…-in-，"><a href="#4-3for-…-in-，" class="headerlink" title="4.3for … in ，"></a>4.3for … in ，</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">20</span>, <span class="attr">city</span>: <span class="string">&#x27;Beijing&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123; </span><br><span class="line">    <span class="keyword">if</span> (o.hasOwnProperty(key)) &#123; </span><br><span class="line">        <span class="built_in">console</span>.log(key); <span class="comment">// &#x27;name&#x27;, &#x27;age&#x27;, &#x27;city&#x27; </span></span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-4while循环"><a href="#4-4while循环" class="headerlink" title="4.4while循环"></a>4.4while循环</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">var</span> n = <span class="number">99</span>; </span><br><span class="line"><span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123; </span><br><span class="line">    x = x + n; </span><br><span class="line">    n = n - <span class="number">2</span>; </span><br><span class="line">&#125;</span><br><span class="line">x; <span class="comment">// 2500</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-5-do-while循环"><a href="#4-5-do-while循环" class="headerlink" title="4.5 do while循环"></a>4.5 do while循环</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    n = n + <span class="number">1</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">while</span> (n &lt; <span class="number">100</span>);</span><br><span class="line">n; <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/js%E5%9F%BA%E7%A1%80/" rel="tag"># js基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/19/%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5/" rel="prev" title="数组拼接">
+      <i class="fa fa-chevron-left"></i> 数组拼接
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/19/js-dom/" rel="next" title="js-dom">
+      js-dom <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#javaScript%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">javaScript基础教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-javaScript%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1.javaScript简介：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1javascript%E7%9A%84%E5%8E%86%E5%8F%B2%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1javascript的历史：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2ECMAScript"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2ECMAScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3JavaScript%E7%89%88%E6%9C%AC"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3JavaScript版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Js%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2.Js基本数据类型：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1number"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2string"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3boolean"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4null%E5%92%8Cundefined"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4null和undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5Object"><span class="nav-number">1.2.5.</span> <span class="nav-text">2.5Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6Symbol-es6%E6%96%B0%E6%A0%87%E5%87%86"><span class="nav-number">1.2.6.</span> <span class="nav-text">2.6Symbol (es6新标准)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%95%B0%E7%BB%84"><span class="nav-number">1.3.</span> <span class="nav-text">3.数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">基础用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="nav-number">1.3.2.</span> <span class="nav-text">常见用法：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#indexOf"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#slice"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">slice</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#push%E5%92%8Cpop"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">push和pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unshift%E5%92%8Cshift"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">unshift和shift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sort"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reverse"><span class="nav-number">1.3.2.6.</span> <span class="nav-text">reverse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#splice"><span class="nav-number">1.3.2.7.</span> <span class="nav-text">splice</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#concat"><span class="nav-number">1.3.2.8.</span> <span class="nav-text">concat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#join"><span class="nav-number">1.3.2.9.</span> <span class="nav-text">join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-number">1.3.2.10.</span> <span class="nav-text">多维数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%EF%BC%9A"><span class="nav-number">1.3.3.</span> <span class="nav-text">4.流程控制：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1for%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">4.1for循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">4.2无限循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3for-%E2%80%A6-in-%EF%BC%8C"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">4.3for … in ，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-4while%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">4.4while循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-5-do-while%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.3.3.5.</span> <span class="nav-text">4.5 do while循环</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="waven"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">waven</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wangweiwen0515/wangweiwen0515.github.io" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wangweiwen0515&#x2F;wangweiwen0515.github.io" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://mail.163.com/" title="E-Mail → https:&#x2F;&#x2F;mail.163.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/6042139600" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;6042139600" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+      <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+          </iframe>
+      </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">waven</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

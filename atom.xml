@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>waven&#39;s blog</title>
+  
+  <subtitle>always smile</subtitle>
+  <link href="http://wangweiwen0515.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://wangweiwen0515.github.io/"/>
+  <updated>2020-11-27T08:57:52.915Z</updated>
+  <id>http://wangweiwen0515.github.io/</id>
+  
+  <author>
+    <name>waven</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>注解与反射</title>
+    <link href="http://wangweiwen0515.github.io/2020/11/26/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/"/>
+    <id>http://wangweiwen0515.github.io/2020/11/26/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/</id>
+    <published>2020-11-26T13:34:21.000Z</published>
+    <updated>2020-11-27T08:57:52.915Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;注解&quot;&gt;&lt;a href=&quot;#注解&quot; class=&quot;headerlink&quot; title=&quot;注解&quot;&gt;&lt;/a&gt;注解&lt;/h1&gt;&lt;p&gt;Java 注解（Annotation）又称 Java 标注，是 JDK5.0 引入的一种注释机制。Java</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java" scheme="http://wangweiwen0515.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue/cli安装使用</title>
+    <link href="http://wangweiwen0515.github.io/2020/11/22/vue-cli%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/"/>
+    <id>http://wangweiwen0515.github.io/2020/11/22/vue-cli%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</id>
+    <published>2020-11-22T12:57:15.000Z</published>
+    <updated>2020-11-27T08:57:58.292Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;1、安装&quot;&gt;&lt;a href=&quot;#1、安装&quot; class=&quot;headerlink&quot; title=&quot;1、安装&quot;&gt;&lt;/a&gt;1、安装&lt;/h1&gt;&lt;p&gt;在安装Vue CLI之前，我们呢需要下载安装Node.js&lt;/p&gt;
+&lt;p&gt;下载链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="http://wangweiwen0515.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js-dom</title>
+    <link href="http://wangweiwen0515.github.io/2020/10/19/js-dom/"/>
+    <id>http://wangweiwen0515.github.io/2020/10/19/js-dom/</id>
+    <published>2020-10-19T09:01:54.000Z</published>
+    <updated>2020-11-27T08:55:22.760Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;dom&quot;&gt;&lt;a href=&quot;#dom&quot; class=&quot;headerlink&quot; title=&quot;dom&quot;&gt;&lt;/a&gt;dom&lt;/h1&gt;&lt;h2 id=&quot;dom简介&quot;&gt;&lt;a href=&quot;#dom简介&quot; class=&quot;headerlink&quot; title=&quot;dom简介&quot;&gt;&lt;/a&gt;dom简介&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;当网页被加载时，浏览器会创建页面的文档对象模型（Document Object MOdel）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HTML DOM&lt;/strong&gt; 模型被构造为&lt;strong&gt;对象&lt;/strong&gt;的树：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;C:\Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201019110038468.png&quot; alt=&quot;image-20201019110038468&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="js基础" scheme="http://wangweiwen0515.github.io/tags/js%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javaScript基础知识</title>
+    <link href="http://wangweiwen0515.github.io/2020/10/19/javaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://wangweiwen0515.github.io/2020/10/19/javaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</id>
+    <published>2020-10-19T08:59:20.000Z</published>
+    <updated>2020-11-27T08:32:01.238Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;javaScript基础教程&quot;&gt;&lt;a href=&quot;#javaScript基础教程&quot; class=&quot;headerlink&quot; title=&quot;javaScript基础教程&quot;&gt;&lt;/a&gt;javaScript基础教程&lt;/h1&gt;&lt;h2 id=&quot;1-javaScript简介：&quot;&gt;&lt;a href=&quot;#1-javaScript简介：&quot; class=&quot;headerlink&quot; title=&quot;1.javaScript简介：&quot;&gt;&lt;/a&gt;1.javaScript简介：&lt;/h2&gt;&lt;h3 id=&quot;1-1javascript的历史：&quot;&gt;&lt;a href=&quot;#1-1javascript的历史：&quot; class=&quot;headerlink&quot; title=&quot;1.1javascript的历史：&quot;&gt;&lt;/a&gt;1.1javascript的历史：&lt;/h3&gt;&lt;p&gt;要了解JavaScript，我们首先要回顾一下JavaScript的诞生。&lt;/p&gt;
+&lt;p&gt;在上个世纪的1995年，当时的网景公司正凭借其Navigator浏览器成为Web时代开启时最著名的第一代互联网公司。&lt;/p&gt;
+&lt;p&gt;由于网景公司希望能在静态HTML页面上添加一些动态效果，于是叫Brendan Eich这哥们在两周之内设计出了JavaScript语言。你没看错，这哥们只用了10天时间。&lt;/p&gt;
+&lt;p&gt;为什么起名叫JavaScript？原因是当时Java语言非常红火，所以网景公司希望借Java的名气来推广，但事实上JavaScript除了语法上有点像Java，其他部分基本上没啥关系。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="js基础" scheme="http://wangweiwen0515.github.io/tags/js%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组拼接</title>
+    <link href="http://wangweiwen0515.github.io/2020/10/19/%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5/"/>
+    <id>http://wangweiwen0515.github.io/2020/10/19/%E6%95%B0%E7%BB%84%E6%8B%BC%E6%8E%A5/</id>
+    <published>2020-10-18T16:00:00.000Z</published>
+    <updated>2020-11-27T08:54:58.050Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;数组的拼接&quot;&gt;&lt;a href=&quot;#数组的拼接&quot; class=&quot;headerlink&quot; title=&quot;数组的拼接&quot;&gt;&lt;/a&gt;数组的拼接&lt;/h1&gt;&lt;p&gt;需求：从键盘输入两个数组，然后将两个数组拼接成一个数组，并且要求两个数组对应位上的数据放在一块，同一数组中的数据不能连载一起。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.util.Scanner;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; 数组的拼接 &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//键盘的输入&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Scanner sc = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Scanner(System.in);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; arr1[] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; arr2[] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(&lt;span class=&quot;string&quot;&gt;&amp;quot;请输入第一个数组中的元素&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; arr1.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            arr1[i] = sc.nextInt();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(&lt;span class=&quot;string&quot;&gt;&amp;quot;请你输入第二个数组中的元素&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; arr2.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            arr2[i] = sc.nextInt();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; arr[] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//定义两个变量，分别作为两个小数组的索引值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; j=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;,k=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; arr.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i%&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;==&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                arr[i]=arr1[j];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                j++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (i%&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;!=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                arr[i]=arr2[k];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                k++;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.print(&lt;span class=&quot;string&quot;&gt;&amp;quot;拼接后的数组：&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; arr.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            System.out.print(arr[i]+&lt;span class=&quot;string&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+    <category term="leetcode" scheme="http://wangweiwen0515.github.io/tags/leetcode/"/>
+    
+  </entry>
+  
+</feed>
