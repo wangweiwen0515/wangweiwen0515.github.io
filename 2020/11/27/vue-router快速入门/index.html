@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"wangweiwen0515.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="vue-router快速入门1.引入vue和vue-router的js文件123&lt;!-- 引入文件 --&gt;&lt;script src&#x3D;&quot;js&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;&lt;script src&#x3D;&quot;js&#x2F;vue-router_3.0.2.js&quot;&gt;&lt;&#x2F;script&gt;  2.添加路由连接123&lt;!">
+  <meta name="description" content="vue-router快速入门">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router快速入门">
 <meta property="og:url" content="http://wangweiwen0515.github.io/2020/11/27/vue-router%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="waven&#39;s blog">
-<meta property="og:description" content="vue-router快速入门1.引入vue和vue-router的js文件123&lt;!-- 引入文件 --&gt;&lt;script src&#x3D;&quot;js&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;&lt;script src&#x3D;&quot;js&#x2F;vue-router_3.0.2.js&quot;&gt;&lt;&#x2F;script&gt;  2.添加路由连接123&lt;!">
+<meta property="og:description" content="vue-router快速入门">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-27T10:26:39.000Z">
-<meta property="article:modified_time" content="2020-11-27T10:28:22.446Z">
+<meta property="article:modified_time" content="2020-11-27T10:30:51.814Z">
 <meta property="article:author" content="waven">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -217,7 +217,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-27 18:26:39 / 修改时间：18:28:22" itemprop="dateCreated datePublished" datetime="2020-11-27T18:26:39+08:00">2020-11-27</time>
+              <time title="创建时间：2020-11-27 18:26:39 / 修改时间：18:30:51" itemprop="dateCreated datePublished" datetime="2020-11-27T18:26:39+08:00">2020-11-27</time>
             </span>
 
           
@@ -231,7 +231,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="vue-router快速入门"><a href="#vue-router快速入门" class="headerlink" title="vue-router快速入门"></a>vue-router快速入门</h1><h2 id="1-引入vue和vue-router的js文件"><a href="#1-引入vue和vue-router的js文件" class="headerlink" title="1.引入vue和vue-router的js文件"></a>1.引入vue和vue-router的js文件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 引入文件 --&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;js/vue.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;js/vue-router_3.0.2.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <h1 id="vue-router快速入门"><a href="#vue-router快速入门" class="headerlink" title="vue-router快速入门"></a>vue-router快速入门</h1><a id="more"></a>
+
+<h2 id="1-引入vue和vue-router的js文件"><a href="#1-引入vue和vue-router的js文件" class="headerlink" title="1.引入vue和vue-router的js文件"></a>1.引入vue和vue-router的js文件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 引入文件 --&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;js/vue.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;js/vue-router_3.0.2.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-添加路由连接"><a href="#2-添加路由连接" class="headerlink" title="2.添加路由连接"></a>2.添加路由连接</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 添加路由连接 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/user&quot;</span>&gt;</span>User组件<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">&quot;/register&quot;</span>&gt;</span>Register组件<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
