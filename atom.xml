@@ -6,7 +6,7 @@
   <link href="http://wangweiwen0515.github.io/atom.xml" rel="self"/>
   
   <link href="http://wangweiwen0515.github.io/"/>
-  <updated>2020-11-27T10:31:09.022Z</updated>
+  <updated>2020-12-07T02:47:41.423Z</updated>
   <id>http://wangweiwen0515.github.io/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨域问题</title>
+    <link href="http://wangweiwen0515.github.io/2020/12/07/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
+    <id>http://wangweiwen0515.github.io/2020/12/07/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</id>
+    <published>2020-12-07T02:45:18.000Z</published>
+    <updated>2020-12-07T02:47:41.423Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.添加一个配置文件&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="springboot" scheme="http://wangweiwen0515.github.io/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springboot入门案例</title>
+    <link href="http://wangweiwen0515.github.io/2020/12/05/springboot%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"/>
+    <id>http://wangweiwen0515.github.io/2020/12/05/springboot%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/</id>
+    <published>2020-12-05T07:33:19.000Z</published>
+    <updated>2020-12-07T02:47:48.833Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;1-配置数据库的连接&quot;&gt;&lt;a href=&quot;#1-配置数据库的连接&quot; class=&quot;headerlink&quot; title=&quot;1.配置数据库的连接&quot;&gt;&lt;/a&gt;1.配置数据库的连接&lt;/h2&gt;&lt;p&gt;打开新建好的springboot项目，再src&amp;gt;main&amp;gt;resource目录下新建一个application.yml的文件来填写数据库连接配置文件&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="springboot" scheme="http://wangweiwen0515.github.io/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springboot的新建</title>
+    <link href="http://wangweiwen0515.github.io/2020/12/05/springboot%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
+    <id>http://wangweiwen0515.github.io/2020/12/05/springboot%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</id>
+    <published>2020-12-05T07:01:18.000Z</published>
+    <updated>2020-12-05T07:17:12.673Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;选择一种自己喜欢的编辑器，我选择是idea&lt;/p&gt;
+&lt;p&gt;首先选择File——》New——》Project然后选择图中的选项&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="springboot" scheme="http://wangweiwen0515.github.io/tags/springboot/"/>
+    
+  </entry>
   
   <entry>
     <title>独一无二出现的次数</title>
