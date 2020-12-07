@@ -322,11 +322,6 @@
       </tags>
   </entry>
   <entry>
-    <title>text</title>
-    <url>/2020/12/07/text/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>vue/cli安装使用</title>
     <url>/2020/11/22/vue-cli%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h1><p>在安装Vue CLI之前，我们呢需要下载安装Node.js</p>
@@ -386,6 +381,11 @@
       </tags>
   </entry>
   <entry>
+    <title>text</title>
+    <url>/2020/12/07/text/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>vue七大属性</title>
     <url>/2020/11/27/vue%E4%B8%83%E5%A4%A7%E5%B1%9E%E6%80%A7/</url>
     <content><![CDATA[<h1 id="Vue七大属性"><a href="#Vue七大属性" class="headerlink" title="Vue七大属性"></a>Vue七大属性</h1><a id="more"></a>
@@ -436,29 +436,29 @@
       </tags>
   </entry>
   <entry>
-    <title>注解与反射</title>
-    <url>/2020/11/26/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/</url>
-    <content><![CDATA[<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p>Java 注解（Annotation）又称 Java 标注，是 JDK5.0 引入的一种注释机制。Java 语言中的类、方法、变量、参数和包等都可以被标注。和 Javadoc 不同，Java 标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java 虚拟机可以保留标注内容，在运行时可以获取到标注内容 。</p>
-<h2 id="内置注解："><a href="#内置注解：" class="headerlink" title="内置注解："></a>内置注解：</h2><p>1.@Override:定义于java.lang.Override。此注释只使用于修辞手法，表示一个方法声明打算重写超类中的另一个方法声明。</p>
-<p>2.@Deprecated：此注释可以用于修辞手法、属性、类；表示不推荐使用，</p>
-<p>3.@SuppressWarning:用于抑制编译时的警告信息，使用时需要附带参数。</p>
-<h2 id="元注解："><a href="#元注解：" class="headerlink" title="元注解："></a>元注解：</h2><p><strong>元注解用于注解其他注解</strong></p>
-<p>1.@Target：用于描述注解的作用范围</p>
-<p>2.@Retention：表示需要在什么级别保存该注解信息，用于描述注解的生命周期</p>
-<p>3.@Document：标记这个注解是否存于用户文档中</p>
-<p>4.@Inherited：用于描述该注解的继承性</p>
-<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>反射就是把java类中的各种成分映射成一个个的Java对象<br>例如：一个类有：成员变量、方法、构造方法、包等等信息，利用反射技术可以对一个类进行解剖，把个个组成部分映射成一个个对象。</p>
-<p><strong>Java反射机制提供的功能：</strong></p>
-<p>1.在运行时判断任意一个对象所属的类</p>
-<p>2.在运行时构造任意一个类的对像</p>
-<p>3.在运行时判断任意一个类所具有的成员变量和方法</p>
-<p>4.在运行时获取泛型信息</p>
-<p>5.在运行时调用任意一个对象的成员变量和方法</p>
-<p>6.在运行时处理注解</p>
-<p>7.生成动态代理</p>
+    <title>反射操作注解</title>
+    <url>/2020/12/07/%E5%8F%8D%E5%B0%84%E6%93%8D%E4%BD%9C%E6%B3%A8%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="1-定义一个实体类-并生成有参，无参，getter和setter方法"><a href="#1-定义一个实体类-并生成有参，无参，getter和setter方法" class="headerlink" title="1.定义一个实体类,并生成有参，无参，getter和setter方法"></a>1.定义一个实体类,并生成有参，无参，getter和setter方法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义一个实体类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">student</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> age, String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> id;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;<span class="keyword">this</span>.id = id;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> age;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;<span class="keyword">this</span>.age = age;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> name;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;<span class="keyword">this</span>.name = name; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;student&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;id=&quot;</span> + id +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="2-定义类的注解"><a href="#2-定义类的注解" class="headerlink" title="2.定义类的注解"></a>2.定义类的注解</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义一个类的注解</span></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span><span class="comment">//作用范围是元素的类型</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span><span class="comment">//表示在运行时保存该注解信息，用于描述注解的生命周期</span></span><br><span class="line"><span class="meta">@interface</span> Table&#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-属性的注解"><a href="#3-属性的注解" class="headerlink" title="3.属性的注解"></a>3.属性的注解</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义属性的注解</span></span><br><span class="line"><span class="meta">@Target(ElementType.FIELD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@interface</span> Filed&#123;</span><br><span class="line">    <span class="function">String <span class="title">columnName</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">type</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">length</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-给类以及属性加上注解"><a href="#4-给类以及属性加上注解" class="headerlink" title="4.给类以及属性加上注解"></a>4.给类以及属性加上注解</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Table(&quot;db_student&quot;)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">student</span></span>&#123;</span><br><span class="line">    <span class="meta">@Filed(columnName = &quot;db_id&quot;,type = &quot;int&quot;,length = 10)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="meta">@Filed(columnName = &quot;db_age&quot;,type = &quot;int&quot;,length = 3)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="meta">@Filed(columnName = &quot;db_name&quot;,type = &quot;varchar&quot;,length = 10)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-通过反射获取类的信息"><a href="#5-通过反射获取类的信息" class="headerlink" title="5.通过反射获取类的信息"></a>5.通过反射获取类的信息</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过名称获取类</span></span><br><span class="line">Class c1 = Class.forName(<span class="string">&quot;student&quot;</span>);</span><br><span class="line"><span class="comment">//获取类的注解</span></span><br><span class="line">Annotation[] annotations = c1.getAnnotations();</span><br><span class="line"><span class="keyword">for</span> (Annotation annotation : annotations) &#123;</span><br><span class="line">    <span class="comment">//打印注解信息</span></span><br><span class="line">    System.out.println(annotation); <span class="comment">//==&gt;@Table(value=db_student)</span></span><br><span class="line">&#125;</span><br><span class="line">Table annotation = (Table) c1.getAnnotation(Table.class);</span><br><span class="line"><span class="comment">//打印注解内的value值</span></span><br><span class="line">System.out.println(annotation.value()); <span class="comment">//==&gt;db_student</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-通过反射获取属性的信息"><a href="#6-通过反射获取属性的信息" class="headerlink" title="6.通过反射获取属性的信息"></a>6.通过反射获取属性的信息</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过反射获得字段</span></span><br><span class="line">Field id = c1.getDeclaredField(<span class="string">&quot;id&quot;</span>);</span><br><span class="line"><span class="comment">//获取字段的注解</span></span><br><span class="line">Filed annotation1 = id.getAnnotation(Filed.class);</span><br><span class="line">System.out.println(annotation1.columnName()); <span class="comment">//==&gt;db_id</span></span><br><span class="line">System.out.println(annotation1.type()); <span class="comment">//==&gt;int</span></span><br><span class="line">System.out.println(annotation1.length()); <span class="comment">//==&gt;10</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 ]]></content>
       <tags>
-        <tag>java</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -532,6 +532,32 @@
 ]]></content>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>注解与反射</title>
+    <url>/2020/11/26/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p>Java 注解（Annotation）又称 Java 标注，是 JDK5.0 引入的一种注释机制。Java 语言中的类、方法、变量、参数和包等都可以被标注。和 Javadoc 不同，Java 标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java 虚拟机可以保留标注内容，在运行时可以获取到标注内容 。</p>
+<h2 id="内置注解："><a href="#内置注解：" class="headerlink" title="内置注解："></a>内置注解：</h2><p>1.@Override:定义于java.lang.Override。此注释只使用于修辞手法，表示一个方法声明打算重写超类中的另一个方法声明。</p>
+<p>2.@Deprecated：此注释可以用于修辞手法、属性、类；表示不推荐使用，</p>
+<p>3.@SuppressWarning:用于抑制编译时的警告信息，使用时需要附带参数。</p>
+<h2 id="元注解："><a href="#元注解：" class="headerlink" title="元注解："></a>元注解：</h2><p><strong>元注解用于注解其他注解</strong></p>
+<p>1.@Target：用于描述注解的作用范围</p>
+<p>2.@Retention：表示需要在什么级别保存该注解信息，用于描述注解的生命周期</p>
+<p>3.@Document：标记这个注解是否存于用户文档中</p>
+<p>4.@Inherited：用于描述该注解的继承性</p>
+<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>反射就是把java类中的各种成分映射成一个个的Java对象<br>例如：一个类有：成员变量、方法、构造方法、包等等信息，利用反射技术可以对一个类进行解剖，把个个组成部分映射成一个个对象。</p>
+<p><strong>Java反射机制提供的功能：</strong></p>
+<p>1.在运行时判断任意一个对象所属的类</p>
+<p>2.在运行时构造任意一个类的对像</p>
+<p>3.在运行时判断任意一个类所具有的成员变量和方法</p>
+<p>4.在运行时获取泛型信息</p>
+<p>5.在运行时调用任意一个对象的成员变量和方法</p>
+<p>6.在运行时处理注解</p>
+<p>7.生成动态代理</p>
+]]></content>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
