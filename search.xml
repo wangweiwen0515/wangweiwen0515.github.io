@@ -1,6 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>javaScript基础知识</title>
+    <url>/2020/10/19/javaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="javaScript基础教程"><a href="#javaScript基础教程" class="headerlink" title="javaScript基础教程"></a>javaScript基础教程</h1><h2 id="1-javaScript简介："><a href="#1-javaScript简介：" class="headerlink" title="1.javaScript简介："></a>1.javaScript简介：</h2><h3 id="1-1javascript的历史："><a href="#1-1javascript的历史：" class="headerlink" title="1.1javascript的历史："></a>1.1javascript的历史：</h3><p>要了解JavaScript，我们首先要回顾一下JavaScript的诞生。</p>
+<p>在上个世纪的1995年，当时的网景公司正凭借其Navigator浏览器成为Web时代开启时最著名的第一代互联网公司。</p>
+<p>由于网景公司希望能在静态HTML页面上添加一些动态效果，于是叫Brendan Eich这哥们在两周之内设计出了JavaScript语言。你没看错，这哥们只用了10天时间。</p>
+<p>为什么起名叫JavaScript？原因是当时Java语言非常红火，所以网景公司希望借Java的名气来推广，但事实上JavaScript除了语法上有点像Java，其他部分基本上没啥关系。</p>
+<a id="more"></a>
+
+<h3 id="1-2ECMAScript"><a href="#1-2ECMAScript" class="headerlink" title="1.2ECMAScript"></a>1.2ECMAScript</h3><p>因为网景开发了JavaScript，一年后微软又模仿JavaScript开发了JScript，为了让JavaScript成为全球标准，几个公司联合ECMA（European Computer Manufacturers Association）组织定制了JavaScript语言的标准，被称为ECMAScript标准。</p>
+<p>所以简单说来就是，ECMAScript是一种语言标准，而JavaScript是网景公司对ECMAScript标准的一种实现。</p>
+<p>那为什么不直接把JavaScript定为标准呢？因为JavaScript是网景的注册商标。</p>
+<p>不过大多数时候，我们还是用JavaScript这个词。如果你遇到ECMAScript这个词，简单把它替换为JavaScript就行了。</p>
+<h3 id="1-3JavaScript版本"><a href="#1-3JavaScript版本" class="headerlink" title="1.3JavaScript版本"></a><strong>1.3JavaScript版本</strong></h3><p>JavaScript语言是在10天时间内设计出来的，虽然语言的设计者水平非常NB，但谁也架不住“时间紧，任务重”，所以，JavaScript有很多设计缺陷，我们后面会慢慢讲到。</p>
+<p>此外，由于JavaScript的标准——ECMAScript在不断发展，最新版ECMAScript 6标准（简称ES6）已经在2015年6月正式发布了，所以，讲到JavaScript的版本，实际上就是说它实现了ECMAScript标准的哪个版本。</p>
+<p>由于浏览器在发布时就确定了JavaScript的版本，加上很多用户还在使用IE6这种古老的浏览器，这就导致你在写JavaScript的时候，要照顾一下老用户，不能一上来就用最新的ES6标准写，否则，老用户的浏览器是无法运行新版本的JavaScript代码的。</p>
+<p>不过，JavaScript的核心语法并没有多大变化。我们的教程会先讲JavaScript最核心的用法，然后，针对ES6讲解新增特性。</p>
+<h2 id="2-Js基本数据类型："><a href="#2-Js基本数据类型：" class="headerlink" title="2.Js基本数据类型："></a>2.Js基本数据类型：</h2><h3 id="2-1number"><a href="#2-1number" class="headerlink" title="2.1number"></a>2.1number</h3><p>javascript是不区分浮点数和整数的，统一用number表示，一下都是合法的number类型：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">123</span>; <span class="comment">// 整数123 </span></span><br><span class="line"><span class="number">0.456</span>; <span class="comment">// 浮点数0.456 </span></span><br><span class="line"><span class="number">1.2345e3</span>; <span class="comment">// 科学计数法表示1.2345x1000，等同于1234.5 </span></span><br><span class="line">-<span class="number">99</span>; <span class="comment">// 负数 </span></span><br><span class="line"><span class="literal">NaN</span>; <span class="comment">// NaN表示Not a Number，当无法计算结果时用NaN表示 </span></span><br><span class="line"><span class="literal">Infinity</span>; <span class="comment">// Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就 表示为Infinity</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2string"><a href="#2-2string" class="headerlink" title="2.2string"></a>2.2string</h3><p>字符串是以单引号’或双引号”括起来的任意文本，比如 ‘abc’ ， “xyz” 等等。请注意， ‘’ 或 “” 本身只是一种表示方式，不是字符串的一部分，因此，字符串 ‘abc’ 只有a ， b ， c 这3个字符。</p>
+<h3 id="2-3boolean"><a href="#2-3boolean" class="headerlink" title="2.3boolean"></a>2.3boolean</h3><p>2.3.1布尔值和布尔代数的表示完全一致，一个布尔值只有 true 、 false 两种值，要么是 true ，要么是 false ，可以直接用 true 、 false 表示布尔值，也可以通过布尔运算计算出来：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">true</span>; <span class="comment">// 这是一个true值 </span></span><br><span class="line"><span class="literal">false</span>; <span class="comment">// 这是一个false值 </span></span><br><span class="line"><span class="number">2</span> &gt; <span class="number">1</span>; <span class="comment">// 这是一个true值 </span></span><br><span class="line"><span class="number">2</span> &gt;= <span class="number">3</span>; <span class="comment">// 这是一个false值</span></span><br></pre></td></tr></table></figure>
+
+<p>2.3.2运算</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为true </span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为false </span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为false</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为false </span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为true </span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4null和undefined"><a href="#2-4null和undefined" class="headerlink" title="2.4null和undefined"></a>2.4null和undefined</h3><p>null 表示一个“空”的值，它和 0 以及空字符串 ‘’ 不同， 0 是一个数值， ‘’ 表示长度为0的字符串，而 null 表示“空”。</p>
+<p>在其他语言中，也有类似JavaScript的 null 的表示，例如Java也用 null ，Swift用 nil ，Python用 None 表示。但是，在JavaScript中，还有一个和 null 类似的 undefined ，它表示“未定义”。</p>
+<h3 id="2-5Object"><a href="#2-5Object" class="headerlink" title="2.5Object"></a>2.5Object</h3><p><strong>对象分为内建对象和宿主对象，内建对象例如Array，Date，Math等。除了内建对象，还可以在js脚本里使用一些预先定义好的其他对象。这些对象不是由js语言本身而是由他的运行环境提供的。具体到web应用，这个环境就是浏览器。由浏览器预先编译好的对象称为宿主对象，包括Form，Image，Element。</strong></p>
+<p>JavaScript的对象是一组由键-值组成的无序集合，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">     name:<span class="string">&#x27;weiwen&#x27;</span>,</span><br><span class="line">     age:<span class="number">23</span>,</span><br><span class="line">     intrest:[<span class="string">&#x27;js&#x27;</span>,<span class="string">&#x27;web&#x27;</span>,<span class="string">&#x27;java&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JavaScript对象的键都是字符串类型，值可以是任意数据类型。上述 person 对象一共定义了6个键值对，其中每个键又称为对象的属性.</p>
+<p>要获取一个对象的属性，我们用 对象变量.属性名 的方式：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">person.name<span class="comment">//weiwen</span></span><br><span class="line">person.age<span class="comment">//23</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6Symbol-es6新标准"><a href="#2-6Symbol-es6新标准" class="headerlink" title="2.6Symbol (es6新标准)"></a>2.6Symbol (es6新标准)</h3><p>表示一个独一无二的值，最大的用法是用来定义对象的唯一属性名。引入symbol是因为es5的对象中的属性名是字符串，容易造成属性名的冲突。使用方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> sy = <span class="built_in">Symbol</span>(<span class="string">&quot;key&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> syObject = &#123;&#125;;</span><br><span class="line">syObject[sy] = <span class="string">&quot;weiwen&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(syObject)  <span class="comment">//&#123;Symbol(key): &quot;weiwen&quot;&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-数组"><a href="#3-数组" class="headerlink" title="3.数组"></a>3.数组</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p>JavaScript的 Array 可以包含任意数据类型，并通过索引来访问每个元素。要取得 Array 的长度，直接访问 <strong>length</strong> 属性：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3.14</span>, <span class="string">&#x27;Hello&#x27;</span>, <span class="literal">null</span>, <span class="literal">true</span>]; </span><br><span class="line">arr.length; <span class="comment">// 6 </span></span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意，直接给 Array 的 length 赋一个新的值会导致 Array 大小的变化</strong>:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr.length; <span class="comment">// 3 </span></span><br><span class="line">arr.length = <span class="number">6</span>; arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, undefined] </span></span><br><span class="line">arr.length = <span class="number">2</span>; arr; <span class="comment">// arr变为[1, 2]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Array 可以通过索引把对应的元素修改为新的值，因此，对 Array 的索引进行赋值会直接修改这个 Array</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">99</span>; </span><br><span class="line">arr; <span class="comment">// arr现在变为[&#x27;A&#x27;, 99, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意，如果通过索引赋值时，索引超过了范围，同样会引起 Array 大小的变化：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr[<span class="number">5</span>] = <span class="string">&#x27;x&#x27;</span>; </span><br><span class="line">arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, &#x27;x&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常见用法："><a href="#常见用法：" class="headerlink" title="常见用法："></a><strong>常见用法：</strong></h3><h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a><strong>indexOf</strong></h4><p><strong>与String类似， Array 也可以通过 indexOf() 来搜索一个指定的元素的位置：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="string">&#x27;30&#x27;</span>, <span class="string">&#x27;xyz&#x27;</span>]; </span><br><span class="line">arr.indexOf(<span class="number">10</span>); <span class="comment">// 元素10的索引为0 </span></span><br><span class="line">arr.indexOf(<span class="number">20</span>); <span class="comment">// 元素20的索引为1 </span></span><br><span class="line">arr.indexOf(<span class="number">30</span>); <span class="comment">// 元素30没有找到，返回-1 </span></span><br><span class="line">arr.indexOf(<span class="string">&#x27;30&#x27;</span>); <span class="comment">// 元素&#x27;30&#x27;的索引为2</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h4><p><strong>slice() 就是对应String的 substring() 版本，它截取 Array 的部分元素，然后返回一个新的 Array</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>]; </span><br><span class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// 从索引0开始，到索引3结束，但不包括索引3: [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;] </span></span><br><span class="line">arr.slice(<span class="number">3</span>); <span class="comment">// 从索引3开始到结束: [&#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;] </span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> aCopy = arr.slice(); </span><br><span class="line">aCopy; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;] </span></span><br><span class="line">aCopy === arr; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="push和pop"><a href="#push和pop" class="headerlink" title="push和pop"></a>push和pop</h4><p><strong>push()</strong> 向 Array 的<strong>末尾</strong>添加若干元素， <strong>pop()</strong> 则把 Array 的<strong>最后一个元素</strong>删除掉</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]; </span><br><span class="line">arr.push(<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>); <span class="comment">// 返回Array新的长度: 4 arr; // [1, 2, &#x27;A&#x27;, &#x27;B&#x27;] </span></span><br><span class="line">arr.pop(); <span class="comment">// pop()返回&#x27;B&#x27; </span></span><br><span class="line">arr; <span class="comment">// [1, 2, &#x27;A&#x27;] </span></span><br><span class="line">arr.pop(); arr.pop(); arr.pop(); <span class="comment">// 连续pop 3次 arr; // [] </span></span><br><span class="line">arr.pop(); <span class="comment">// 空数组继续pop不会报错，而是返回undefined</span></span><br><span class="line">arr; <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="unshift和shift"><a href="#unshift和shift" class="headerlink" title="unshift和shift"></a>unshift和shift</h4><p>如果要往 Array 的<strong>头部</strong>添加若干元素，使用 unshift() 方法， shift() 方法则把Array 的第一个元素删掉：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]; </span><br><span class="line">arr.unshift(<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>); <span class="comment">// 返回Array新的长度: 4 </span></span><br><span class="line">arr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, 1, 2] </span></span><br><span class="line">arr.shift(); <span class="comment">// &#x27;A&#x27; </span></span><br><span class="line">arr; <span class="comment">// [&#x27;B&#x27;, 1, 2] </span></span><br><span class="line">arr.shift(); arr.shift(); arr.shift(); <span class="comment">// 连续shift 3次 </span></span><br><span class="line">arr; <span class="comment">// [] </span></span><br><span class="line">arr.shift(); <span class="comment">// 空数组继续shift不会报错，而是返回undefined </span></span><br><span class="line">arr; <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><p>sort() 可以对当前 Array 进行<strong>排序</strong>，它会直接修改当前 Array 的元素位置，直接调用时，按照默认顺序排序</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;A&#x27;</span>]; </span><br><span class="line">arr.sort(); </span><br><span class="line">rr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><p>reverse() 把整个 Array 的元素给掉个个，也就是<strong>反转</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>]; </span><br><span class="line">arr.reverse(); </span><br><span class="line">rr; <span class="comment">// [&#x27;three&#x27;, &#x27;two&#x27;, &#x27;one&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h4><p>splice() 方法是修改 Array 的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素</p>
+<p><strong>语法：arrayObject.splice(index,howmany,item1,…..,itemX)</strong></p>
+<p>index：必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</p>
+<p>howmany：必需。要删除的项目数量。如果设置为 0，则不会删除项目。</p>
+<p>item1, …, itemX：可选。向数组添加的新项目。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">23</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">2</span>,<span class="number">11</span>,<span class="number">22</span>)<span class="comment">//返回删除的元素 [1, 2]</span></span><br><span class="line">arr <span class="comment">//(7) [11, 22, 23, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">//只删除不添加</span></span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">2</span>) <span class="comment">//(2) [11, 22]</span></span><br><span class="line">arr <span class="comment">//(5) [23, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">//只添加不删除</span></span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">0</span>,<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>)  <span class="comment">//[]</span></span><br><span class="line">arr  <span class="comment">//(8) [11, 22, 33, 23, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h4><p>concat() 方法把当前的 Array 和另一个 Array 连接起来，并返回一个新的 Array </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> added = arr.concat([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); </span><br><span class="line">added; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, 1, 2, 3] </span></span><br><span class="line">arr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<p>请注意， concat() 方法并没有修改当前 Array ，而是返回了一个新的 Array 。实际上， concat() 方法可以接收任意个元素和 Array ，并且自动把 Array 拆开，然后全部添加到新的 Array 里：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line">arr.concat(<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, 1, 2, 3, 4] </span></span><br></pre></td></tr></table></figure>
+
+<h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><p>join() 方法是一个非常实用的方法，它把当前 Array 的每个元素都用指定的字符串连接起来，然后返回连接后的字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr.join(<span class="string">&#x27;-&#x27;</span>); <span class="comment">// &#x27;A-B-C-1-2-3&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h4><p>如果数组的某个元素又是一个 Array ，则可以形成多维数组，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">400</span>, <span class="number">500</span>, <span class="number">600</span>], <span class="string">&#x27;-&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+
+
+<p>上述 Array 包含3个元素，其中头两个元素本身也是 Array 。</p>
+<p>练习：如何通过索引取到 500 这个值：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = arr[<span class="number">1</span>][<span class="number">2</span>]; </span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// x应该为500 </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-流程控制："><a href="#4-流程控制：" class="headerlink" title="4.流程控制："></a>4.流程控制：</h3><h4 id="4-1for循环"><a href="#4-1for循环" class="headerlink" title="4.1for循环"></a>4.1for循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr= [<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;ali&#x27;</span>,<span class="string">&#x27;tengxun&#x27;</span>]</span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;arr.length();i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2无限循环"><a href="#4-2无限循环" class="headerlink" title="4.2无限循环"></a>4.2无限循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">for</span> (;;) &#123; </span><br><span class="line">    <span class="comment">// 将无限循环下去 </span></span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">100</span>) &#123; <span class="keyword">break</span>;<span class="comment">// 通过if判断来退出循环 &#125;</span></span><br><span class="line">     x ++;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-3for-…-in-，"><a href="#4-3for-…-in-，" class="headerlink" title="4.3for … in ，"></a>4.3for … in ，</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">20</span>, <span class="attr">city</span>: <span class="string">&#x27;Beijing&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123; </span><br><span class="line">    <span class="keyword">if</span> (o.hasOwnProperty(key)) &#123; </span><br><span class="line">        <span class="built_in">console</span>.log(key); <span class="comment">// &#x27;name&#x27;, &#x27;age&#x27;, &#x27;city&#x27; </span></span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-4while循环"><a href="#4-4while循环" class="headerlink" title="4.4while循环"></a>4.4while循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">var</span> n = <span class="number">99</span>; </span><br><span class="line"><span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123; </span><br><span class="line">    x = x + n; </span><br><span class="line">    n = n - <span class="number">2</span>; </span><br><span class="line">&#125;</span><br><span class="line">x; <span class="comment">// 2500</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-5-do-while循环"><a href="#4-5-do-while循环" class="headerlink" title="4.5 do while循环"></a>4.5 do while循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> n=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    n = n + <span class="number">1</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">while</span> (n &lt; <span class="number">100</span>);</span><br><span class="line">n; <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>js基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>js-dom</title>
     <url>/2020/10/19/js-dom/</url>
     <content><![CDATA[<h1 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h1><h2 id="dom简介"><a href="#dom简介" class="headerlink" title="dom简介"></a>dom简介</h2><p><strong>当网页被加载时，浏览器会创建页面的文档对象模型（Document Object MOdel）。</strong></p>
@@ -139,144 +259,6 @@
       </tags>
   </entry>
   <entry>
-    <title>javaScript基础知识</title>
-    <url>/2020/10/19/javaScript%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
-    <content><![CDATA[<h1 id="javaScript基础教程"><a href="#javaScript基础教程" class="headerlink" title="javaScript基础教程"></a>javaScript基础教程</h1><h2 id="1-javaScript简介："><a href="#1-javaScript简介：" class="headerlink" title="1.javaScript简介："></a>1.javaScript简介：</h2><h3 id="1-1javascript的历史："><a href="#1-1javascript的历史：" class="headerlink" title="1.1javascript的历史："></a>1.1javascript的历史：</h3><p>要了解JavaScript，我们首先要回顾一下JavaScript的诞生。</p>
-<p>在上个世纪的1995年，当时的网景公司正凭借其Navigator浏览器成为Web时代开启时最著名的第一代互联网公司。</p>
-<p>由于网景公司希望能在静态HTML页面上添加一些动态效果，于是叫Brendan Eich这哥们在两周之内设计出了JavaScript语言。你没看错，这哥们只用了10天时间。</p>
-<p>为什么起名叫JavaScript？原因是当时Java语言非常红火，所以网景公司希望借Java的名气来推广，但事实上JavaScript除了语法上有点像Java，其他部分基本上没啥关系。</p>
-<a id="more"></a>
-
-<h3 id="1-2ECMAScript"><a href="#1-2ECMAScript" class="headerlink" title="1.2ECMAScript"></a>1.2ECMAScript</h3><p>因为网景开发了JavaScript，一年后微软又模仿JavaScript开发了JScript，为了让JavaScript成为全球标准，几个公司联合ECMA（European Computer Manufacturers Association）组织定制了JavaScript语言的标准，被称为ECMAScript标准。</p>
-<p>所以简单说来就是，ECMAScript是一种语言标准，而JavaScript是网景公司对ECMAScript标准的一种实现。</p>
-<p>那为什么不直接把JavaScript定为标准呢？因为JavaScript是网景的注册商标。</p>
-<p>不过大多数时候，我们还是用JavaScript这个词。如果你遇到ECMAScript这个词，简单把它替换为JavaScript就行了。</p>
-<h3 id="1-3JavaScript版本"><a href="#1-3JavaScript版本" class="headerlink" title="1.3JavaScript版本"></a><strong>1.3JavaScript版本</strong></h3><p>JavaScript语言是在10天时间内设计出来的，虽然语言的设计者水平非常NB，但谁也架不住“时间紧，任务重”，所以，JavaScript有很多设计缺陷，我们后面会慢慢讲到。</p>
-<p>此外，由于JavaScript的标准——ECMAScript在不断发展，最新版ECMAScript 6标准（简称ES6）已经在2015年6月正式发布了，所以，讲到JavaScript的版本，实际上就是说它实现了ECMAScript标准的哪个版本。</p>
-<p>由于浏览器在发布时就确定了JavaScript的版本，加上很多用户还在使用IE6这种古老的浏览器，这就导致你在写JavaScript的时候，要照顾一下老用户，不能一上来就用最新的ES6标准写，否则，老用户的浏览器是无法运行新版本的JavaScript代码的。</p>
-<p>不过，JavaScript的核心语法并没有多大变化。我们的教程会先讲JavaScript最核心的用法，然后，针对ES6讲解新增特性。</p>
-<h2 id="2-Js基本数据类型："><a href="#2-Js基本数据类型：" class="headerlink" title="2.Js基本数据类型："></a>2.Js基本数据类型：</h2><h3 id="2-1number"><a href="#2-1number" class="headerlink" title="2.1number"></a>2.1number</h3><p>javascript是不区分浮点数和整数的，统一用number表示，一下都是合法的number类型：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="number">123</span>; <span class="comment">// 整数123 </span></span><br><span class="line"><span class="number">0.456</span>; <span class="comment">// 浮点数0.456 </span></span><br><span class="line"><span class="number">1.2345e3</span>; <span class="comment">// 科学计数法表示1.2345x1000，等同于1234.5 </span></span><br><span class="line">-<span class="number">99</span>; <span class="comment">// 负数 </span></span><br><span class="line"><span class="literal">NaN</span>; <span class="comment">// NaN表示Not a Number，当无法计算结果时用NaN表示 </span></span><br><span class="line"><span class="literal">Infinity</span>; <span class="comment">// Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就 表示为Infinity</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2string"><a href="#2-2string" class="headerlink" title="2.2string"></a>2.2string</h3><p>字符串是以单引号’或双引号”括起来的任意文本，比如 ‘abc’ ， “xyz” 等等。请注意， ‘’ 或 “” 本身只是一种表示方式，不是字符串的一部分，因此，字符串 ‘abc’ 只有a ， b ， c 这3个字符。</p>
-<h3 id="2-3boolean"><a href="#2-3boolean" class="headerlink" title="2.3boolean"></a>2.3boolean</h3><p>2.3.1布尔值和布尔代数的表示完全一致，一个布尔值只有 true 、 false 两种值，要么是 true ，要么是 false ，可以直接用 true 、 false 表示布尔值，也可以通过布尔运算计算出来：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">true</span>; <span class="comment">// 这是一个true值 </span></span><br><span class="line"><span class="literal">false</span>; <span class="comment">// 这是一个false值 </span></span><br><span class="line"><span class="number">2</span> &gt; <span class="number">1</span>; <span class="comment">// 这是一个true值 </span></span><br><span class="line"><span class="number">2</span> &gt;= <span class="number">3</span>; <span class="comment">// 这是一个false值</span></span><br></pre></td></tr></table></figure>
-
-<p>2.3.2运算</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">true</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为true </span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为false </span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="literal">true</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// 这个&amp;&amp;语句计算结果为false</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为false </span></span><br><span class="line"><span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为true </span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span> || <span class="literal">false</span>; <span class="comment">// 这个||语句计算结果为true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4null和undefined"><a href="#2-4null和undefined" class="headerlink" title="2.4null和undefined"></a>2.4null和undefined</h3><p>null 表示一个“空”的值，它和 0 以及空字符串 ‘’ 不同， 0 是一个数值， ‘’ 表示长度为0的字符串，而 null 表示“空”。</p>
-<p>在其他语言中，也有类似JavaScript的 null 的表示，例如Java也用 null ，Swift用 nil ，Python用 None 表示。但是，在JavaScript中，还有一个和 null 类似的 undefined ，它表示“未定义”。</p>
-<h3 id="2-5Object"><a href="#2-5Object" class="headerlink" title="2.5Object"></a>2.5Object</h3><p><strong>对象分为内建对象和宿主对象，内建对象例如Array，Date，Math等。除了内建对象，还可以在js脚本里使用一些预先定义好的其他对象。这些对象不是由js语言本身而是由他的运行环境提供的。具体到web应用，这个环境就是浏览器。由浏览器预先编译好的对象称为宿主对象，包括Form，Image，Element。</strong></p>
-<p>JavaScript的对象是一组由键-值组成的无序集合，例如：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">     name:<span class="string">&#x27;weiwen&#x27;</span>,</span><br><span class="line">     age:<span class="number">23</span>,</span><br><span class="line">     intrest:[<span class="string">&#x27;js&#x27;</span>,<span class="string">&#x27;web&#x27;</span>,<span class="string">&#x27;java&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>JavaScript对象的键都是字符串类型，值可以是任意数据类型。上述 person 对象一共定义了6个键值对，其中每个键又称为对象的属性.</p>
-<p>要获取一个对象的属性，我们用 对象变量.属性名 的方式：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">person.name<span class="comment">//weiwen</span></span><br><span class="line">person.age<span class="comment">//23</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-6Symbol-es6新标准"><a href="#2-6Symbol-es6新标准" class="headerlink" title="2.6Symbol (es6新标准)"></a>2.6Symbol (es6新标准)</h3><p>表示一个独一无二的值，最大的用法是用来定义对象的唯一属性名。引入symbol是因为es5的对象中的属性名是字符串，容易造成属性名的冲突。使用方法如下：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> sy = <span class="built_in">Symbol</span>(<span class="string">&quot;key&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> syObject = &#123;&#125;;</span><br><span class="line">syObject[sy] = <span class="string">&quot;weiwen&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(syObject)  <span class="comment">//&#123;Symbol(key): &quot;weiwen&quot;&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-数组"><a href="#3-数组" class="headerlink" title="3.数组"></a>3.数组</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p>JavaScript的 Array 可以包含任意数据类型，并通过索引来访问每个元素。要取得 Array 的长度，直接访问 <strong>length</strong> 属性：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3.14</span>, <span class="string">&#x27;Hello&#x27;</span>, <span class="literal">null</span>, <span class="literal">true</span>]; </span><br><span class="line">arr.length; <span class="comment">// 6 </span></span><br></pre></td></tr></table></figure>
-
-<p><strong>请注意，直接给 Array 的 length 赋一个新的值会导致 Array 大小的变化</strong>:</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr.length; <span class="comment">// 3 </span></span><br><span class="line">arr.length = <span class="number">6</span>; arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, undefined] </span></span><br><span class="line">arr.length = <span class="number">2</span>; arr; <span class="comment">// arr变为[1, 2]</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>Array 可以通过索引把对应的元素修改为新的值，因此，对 Array 的索引进行赋值会直接修改这个 Array</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">99</span>; </span><br><span class="line">arr; <span class="comment">// arr现在变为[&#x27;A&#x27;, 99, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>请注意，如果通过索引赋值时，索引超过了范围，同样会引起 Array 大小的变化：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr[<span class="number">5</span>] = <span class="string">&#x27;x&#x27;</span>; </span><br><span class="line">arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, &#x27;x&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="常见用法："><a href="#常见用法：" class="headerlink" title="常见用法："></a><strong>常见用法：</strong></h3><h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a><strong>indexOf</strong></h4><p><strong>与String类似， Array 也可以通过 indexOf() 来搜索一个指定的元素的位置：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="string">&#x27;30&#x27;</span>, <span class="string">&#x27;xyz&#x27;</span>]; </span><br><span class="line">arr.indexOf(<span class="number">10</span>); <span class="comment">// 元素10的索引为0 </span></span><br><span class="line">arr.indexOf(<span class="number">20</span>); <span class="comment">// 元素20的索引为1 </span></span><br><span class="line">arr.indexOf(<span class="number">30</span>); <span class="comment">// 元素30没有找到，返回-1 </span></span><br><span class="line">arr.indexOf(<span class="string">&#x27;30&#x27;</span>); <span class="comment">// 元素&#x27;30&#x27;的索引为2</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h4><p><strong>slice() 就是对应String的 substring() 版本，它截取 Array 的部分元素，然后返回一个新的 Array</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>]; </span><br><span class="line">arr.slice(<span class="number">0</span>, <span class="number">3</span>); <span class="comment">// 从索引0开始，到索引3结束，但不包括索引3: [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;] </span></span><br><span class="line">arr.slice(<span class="number">3</span>); <span class="comment">// 从索引3开始到结束: [&#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;] </span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> aCopy = arr.slice(); </span><br><span class="line">aCopy; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, &#x27;D&#x27;, &#x27;E&#x27;, &#x27;F&#x27;, &#x27;G&#x27;] </span></span><br><span class="line">aCopy === arr; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="push和pop"><a href="#push和pop" class="headerlink" title="push和pop"></a>push和pop</h4><p><strong>push()</strong> 向 Array 的<strong>末尾</strong>添加若干元素， <strong>pop()</strong> 则把 Array 的<strong>最后一个元素</strong>删除掉</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]; </span><br><span class="line">arr.push(<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>); <span class="comment">// 返回Array新的长度: 4 arr; // [1, 2, &#x27;A&#x27;, &#x27;B&#x27;] </span></span><br><span class="line">arr.pop(); <span class="comment">// pop()返回&#x27;B&#x27; </span></span><br><span class="line">arr; <span class="comment">// [1, 2, &#x27;A&#x27;] </span></span><br><span class="line">arr.pop(); arr.pop(); arr.pop(); <span class="comment">// 连续pop 3次 arr; // [] </span></span><br><span class="line">arr.pop(); <span class="comment">// 空数组继续pop不会报错，而是返回undefined</span></span><br><span class="line">arr; <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="unshift和shift"><a href="#unshift和shift" class="headerlink" title="unshift和shift"></a>unshift和shift</h4><p>如果要往 Array 的<strong>头部</strong>添加若干元素，使用 unshift() 方法， shift() 方法则把Array 的第一个元素删掉：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>]; </span><br><span class="line">arr.unshift(<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>); <span class="comment">// 返回Array新的长度: 4 </span></span><br><span class="line">arr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, 1, 2] </span></span><br><span class="line">arr.shift(); <span class="comment">// &#x27;A&#x27; </span></span><br><span class="line">arr; <span class="comment">// [&#x27;B&#x27;, 1, 2] </span></span><br><span class="line">arr.shift(); arr.shift(); arr.shift(); <span class="comment">// 连续shift 3次 </span></span><br><span class="line">arr; <span class="comment">// [] </span></span><br><span class="line">arr.shift(); <span class="comment">// 空数组继续shift不会报错，而是返回undefined </span></span><br><span class="line">arr; <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><p>sort() 可以对当前 Array 进行<strong>排序</strong>，它会直接修改当前 Array 的元素位置，直接调用时，按照默认顺序排序</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;A&#x27;</span>]; </span><br><span class="line">arr.sort(); </span><br><span class="line">rr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h4><p>reverse() 把整个 Array 的元素给掉个个，也就是<strong>反转</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>]; </span><br><span class="line">arr.reverse(); </span><br><span class="line">rr; <span class="comment">// [&#x27;three&#x27;, &#x27;two&#x27;, &#x27;one&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h4><p>splice() 方法是修改 Array 的“万能方法”，它可以从指定的索引开始删除若干元素，然后再从该位置添加若干元素</p>
-<p><strong>语法：arrayObject.splice(index,howmany,item1,…..,itemX)</strong></p>
-<p>index：必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</p>
-<p>howmany：必需。要删除的项目数量。如果设置为 0，则不会删除项目。</p>
-<p>item1, …, itemX：可选。向数组添加的新项目。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">23</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">2</span>,<span class="number">11</span>,<span class="number">22</span>)<span class="comment">//返回删除的元素 [1, 2]</span></span><br><span class="line">arr <span class="comment">//(7) [11, 22, 23, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">//只删除不添加</span></span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">2</span>) <span class="comment">//(2) [11, 22]</span></span><br><span class="line">arr <span class="comment">//(5) [23, 3, 4, 5, 6]</span></span><br><span class="line"><span class="comment">//只添加不删除</span></span><br><span class="line">arr.splice(<span class="number">0</span>,<span class="number">0</span>,<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>)  <span class="comment">//[]</span></span><br><span class="line">arr  <span class="comment">//(8) [11, 22, 33, 23, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h4><p>concat() 方法把当前的 Array 和另一个 Array 连接起来，并返回一个新的 Array </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line"><span class="keyword">var</span> added = arr.concat([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); </span><br><span class="line">added; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, 1, 2, 3] </span></span><br><span class="line">arr; <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;]</span></span><br></pre></td></tr></table></figure>
-
-<p>请注意， concat() 方法并没有修改当前 Array ，而是返回了一个新的 Array 。实际上， concat() 方法可以接收任意个元素和 Array ，并且自动把 Array 拆开，然后全部添加到新的 Array 里：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]; </span><br><span class="line">arr.concat(<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// [&#x27;A&#x27;, &#x27;B&#x27;, &#x27;C&#x27;, 1, 2, 3, 4] </span></span><br></pre></td></tr></table></figure>
-
-<h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><p>join() 方法是一个非常实用的方法，它把当前 Array 的每个元素都用指定的字符串连接起来，然后返回连接后的字符串：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </span><br><span class="line">arr.join(<span class="string">&#x27;-&#x27;</span>); <span class="comment">// &#x27;A-B-C-1-2-3&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h4><p>如果数组的某个元素又是一个 Array ，则可以形成多维数组，例如：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">400</span>, <span class="number">500</span>, <span class="number">600</span>], <span class="string">&#x27;-&#x27;</span>];</span><br></pre></td></tr></table></figure>
-
-
-
-<p>上述 Array 包含3个元素，其中头两个元素本身也是 Array 。</p>
-<p>练习：如何通过索引取到 500 这个值：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = arr[<span class="number">1</span>][<span class="number">2</span>]; </span><br><span class="line"><span class="built_in">console</span>.log(x); <span class="comment">// x应该为500 </span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-流程控制："><a href="#4-流程控制：" class="headerlink" title="4.流程控制："></a>4.流程控制：</h3><h4 id="4-1for循环"><a href="#4-1for循环" class="headerlink" title="4.1for循环"></a>4.1for循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> arr= [<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;ali&#x27;</span>,<span class="string">&#x27;tengxun&#x27;</span>]</span><br><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;arr.length();i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-2无限循环"><a href="#4-2无限循环" class="headerlink" title="4.2无限循环"></a>4.2无限循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">for</span> (;;) &#123; </span><br><span class="line">    <span class="comment">// 将无限循环下去 </span></span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">100</span>) &#123; <span class="keyword">break</span>;<span class="comment">// 通过if判断来退出循环 &#125;</span></span><br><span class="line">     x ++;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-3for-…-in-，"><a href="#4-3for-…-in-，" class="headerlink" title="4.3for … in ，"></a>4.3for … in ，</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123; <span class="attr">name</span>: <span class="string">&#x27;Jack&#x27;</span>, <span class="attr">age</span>: <span class="number">20</span>, <span class="attr">city</span>: <span class="string">&#x27;Beijing&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123; </span><br><span class="line">    <span class="keyword">if</span> (o.hasOwnProperty(key)) &#123; </span><br><span class="line">        <span class="built_in">console</span>.log(key); <span class="comment">// &#x27;name&#x27;, &#x27;age&#x27;, &#x27;city&#x27; </span></span><br><span class="line">&#125; &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-4while循环"><a href="#4-4while循环" class="headerlink" title="4.4while循环"></a>4.4while循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">var</span> n = <span class="number">99</span>; </span><br><span class="line"><span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123; </span><br><span class="line">    x = x + n; </span><br><span class="line">    n = n - <span class="number">2</span>; </span><br><span class="line">&#125;</span><br><span class="line">x; <span class="comment">// 2500</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="4-5-do-while循环"><a href="#4-5-do-while循环" class="headerlink" title="4.5 do while循环"></a>4.5 do while循环</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> n=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    n = n + <span class="number">1</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">while</span> (n &lt; <span class="number">100</span>);</span><br><span class="line">n; <span class="comment">// 100</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <tags>
-        <tag>js基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>springboot的新建</title>
-    <url>/2020/12/05/springboot%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<p>选择一种自己喜欢的编辑器，我选择是idea</p>
-<p>首先选择File——》New——》Project然后选择图中的选项</p>
-<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205150636189.png" alt="image-20201205150636189"></p>
-<p>点击Next,进入一下画面</p>
-<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205150817362.png" alt="image-20201205150817362"></p>
-<p>红色箭头标注的为你可以按照自己的需求修改的地方，修改好后点击Next</p>
-<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205151147904.png" alt="image-20201205151147904"></p>
-<p>点击next</p>
-<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205151301038.png" alt="image-20201205151301038"></p>
-<p>然后点击finish，一个springboot项目于就初始化完成了</p>
-]]></content>
-      <tags>
-        <tag>springboot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>springboot入门案例</title>
     <url>/2020/12/05/springboot%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/</url>
     <content><![CDATA[<h2 id="1-配置数据库的连接"><a href="#1-配置数据库的连接" class="headerlink" title="1.配置数据库的连接"></a>1.配置数据库的连接</h2><p>打开新建好的springboot项目，再src&gt;main&gt;resource目录下新建一个application.yml的文件来填写数据库连接配置文件</p>
@@ -356,61 +338,6 @@
       </tags>
   </entry>
   <entry>
-    <title>text</title>
-    <url>/2020/12/07/text/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>vue七大属性</title>
-    <url>/2020/11/27/vue%E4%B8%83%E5%A4%A7%E5%B1%9E%E6%80%A7/</url>
-    <content><![CDATA[<h1 id="Vue七大属性"><a href="#Vue七大属性" class="headerlink" title="Vue七大属性"></a>Vue七大属性</h1><a id="more"></a>
-
-<h2 id="1-el"><a href="#1-el" class="headerlink" title="1.el"></a>1.el</h2><p>获取dom对象</p>
-<h2 id="2-data"><a href="#2-data" class="headerlink" title="2.data"></a>2.data</h2><p>用于存放数据</p>
-<h3 id="2-1条件判断"><a href="#2-1条件判断" class="headerlink" title="2.1条件判断"></a>2.1条件判断</h3><h4 id="2-1-1-v-if"><a href="#2-1-1-v-if" class="headerlink" title="2.1.1 v-if"></a>2.1.1 v-if</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app3&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;seen&quot;</span>&gt;</span>现在你看到我了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app3 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app3&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        seen: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-1-2-v-else"><a href="#2-1-2-v-else" class="headerlink" title="2.1.2 v-else"></a>2.1.2 v-else</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;Math.random()&gt;0.5&quot;</span>&gt;</span></span><br><span class="line">    You can see me!</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">    you can not;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2循环v-for"><a href="#2-2循环v-for" class="headerlink" title="2.2循环v-for"></a>2.2循环v-for</h3><p>html部分：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app4&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span>&gt;</span></span><br><span class="line">            &#123;&#123;todo.text&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>js部分：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app4 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        todos: [</span><br><span class="line">            &#123;<span class="attr">text</span>: <span class="string">&#x27;学习JavaScript&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span>: <span class="string">&#x27;学习vue&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span>: <span class="string">&#x27;整个大项目&#x27;</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-methods："><a href="#3-methods：" class="headerlink" title="3.methods："></a>3.methods：</h2><p>方法必须定义在Vue的methods的对象中</p>
-<h3 id="3-1-v-on事件绑定"><a href="#3-1-v-on事件绑定" class="headerlink" title="3.1 v-on事件绑定"></a>3.1 v-on事件绑定</h3><p>可以使用<strong>v-on</strong>指令监听DOM事件，并在出发时运行一些JavaScript代码</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;alert()&quot;</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">&#x27;hello Vue&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        alert: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="built_in">this</span>.message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-v-model"><a href="#3-2-v-model" class="headerlink" title="3.2 v-model"></a>3.2 v-model</h3><p>你可以用v-model指令在表单<code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code> 及 <code>&lt;select&gt;</code> 元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 <code>v-model</code> 本质上不过是语法糖。它负责监听用户的输入事件以更新数据，并对一些极端场景进行一些特殊处理。</p>
-<p><strong>注：</strong><code>v-model</code> 会忽略所有表单元素的 <code>value</code>、<code>checked</code>、<code>selected</code> attribute 的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 <code>data</code> 选项中声明初始值。</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;点击我&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>message:&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">&#x27;hello Vue&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-component"><a href="#4-component" class="headerlink" title="4.component"></a>4.component</h2><h3 id="4-1-全局注册组件："><a href="#4-1-全局注册组件：" class="headerlink" title="4.1 全局注册组件："></a>4.1 全局注册组件：</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义规则</span></span><br><span class="line">Vue.component(<span class="string">&#x27;my-component-name&#x27;</span>, &#123;</span><br><span class="line">  <span class="comment">// ... 选项 ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>范例：</strong></p>
-<p>html部分：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">v-bind:item</span> = <span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>js部分：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//自定义组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;item&#x27;</span>,&#123;</span><br><span class="line">    props:[<span class="string">&#x27;item&#x27;</span>],<span class="comment">//</span></span><br><span class="line">    template: <span class="string">&#x27;&lt;li&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//vue实例</span></span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">&#x27;hello Vue&#x27;</span>,</span><br><span class="line">        items:[<span class="string">&#x27;java&#x27;</span>,<span class="string">&#x27;vue&#x27;</span>,<span class="string">&#x27;linux&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-axios异步通信"><a href="#5-axios异步通信" class="headerlink" title="5.axios异步通信"></a>5.axios异步通信</h2><p>首先需要明白Vue的生命周期，主要还是利用Vue在模板渲染完毕后渲染数据发送请求，从而将数据展示页面。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190107221323124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21xaW5nbw==,size_16,color_FFFFFF,t_70" alt="img"></p>
-<p>图中红色框内的内容称为钩子函数</p>
-]]></content>
-      <tags>
-        <tag>vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vue-router快速入门</title>
     <url>/2020/11/27/vue-router%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="vue-router快速入门"><a href="#vue-router快速入门" class="headerlink" title="vue-router快速入门"></a>vue-router快速入门</h1><a id="more"></a>
@@ -433,30 +360,27 @@
       </tags>
   </entry>
   <entry>
-    <title>注解与反射</title>
-    <url>/2020/11/26/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/</url>
-    <content><![CDATA[<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p>Java 注解（Annotation）又称 Java 标注，是 JDK5.0 引入的一种注释机制。Java 语言中的类、方法、变量、参数和包等都可以被标注。和 Javadoc 不同，Java 标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java 虚拟机可以保留标注内容，在运行时可以获取到标注内容 。</p>
-<h2 id="内置注解："><a href="#内置注解：" class="headerlink" title="内置注解："></a>内置注解：</h2><p>1.@Override:定义于java.lang.Override。此注释只使用于修辞手法，表示一个方法声明打算重写超类中的另一个方法声明。</p>
-<p>2.@Deprecated：此注释可以用于修辞手法、属性、类；表示不推荐使用，</p>
-<p>3.@SuppressWarning:用于抑制编译时的警告信息，使用时需要附带参数。</p>
-<h2 id="元注解："><a href="#元注解：" class="headerlink" title="元注解："></a>元注解：</h2><p><strong>元注解用于注解其他注解</strong></p>
-<p>1.@Target：用于描述注解的作用范围</p>
-<p>2.@Retention：表示需要在什么级别保存该注解信息，用于描述注解的生命周期</p>
-<p>3.@Document：标记这个注解是否存于用户文档中</p>
-<p>4.@Inherited：用于描述该注解的继承性</p>
-<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>反射就是把java类中的各种成分映射成一个个的Java对象<br>例如：一个类有：成员变量、方法、构造方法、包等等信息，利用反射技术可以对一个类进行解剖，把个个组成部分映射成一个个对象。</p>
-<p><strong>Java反射机制提供的功能：</strong></p>
-<p>1.在运行时判断任意一个对象所属的类</p>
-<p>2.在运行时构造任意一个类的对像</p>
-<p>3.在运行时判断任意一个类所具有的成员变量和方法</p>
-<p>4.在运行时获取泛型信息</p>
-<p>5.在运行时调用任意一个对象的成员变量和方法</p>
-<p>6.在运行时处理注解</p>
-<p>7.生成动态代理</p>
+    <title>springboot的新建</title>
+    <url>/2020/12/05/springboot%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>选择一种自己喜欢的编辑器，我选择是idea</p>
+<p>首先选择File——》New——》Project然后选择图中的选项</p>
+<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205150636189.png" alt="image-20201205150636189"></p>
+<p>点击Next,进入一下画面</p>
+<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205150817362.png" alt="image-20201205150817362"></p>
+<p>红色箭头标注的为你可以按照自己的需求修改的地方，修改好后点击Next</p>
+<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205151147904.png" alt="image-20201205151147904"></p>
+<p>点击next</p>
+<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201205151301038.png" alt="image-20201205151301038"></p>
+<p>然后点击finish，一个springboot项目于就初始化完成了</p>
 ]]></content>
       <tags>
-        <tag>java</tag>
+        <tag>springboot</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>text</title>
+    <url>/2020/12/07/text/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>vue入门实例</title>
@@ -514,18 +438,79 @@
       </tags>
   </entry>
   <entry>
-    <title>独一无二出现的次数</title>
-    <url>/2020/11/27/%E7%8B%AC%E4%B8%80%E6%97%A0%E4%BA%8C%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</url>
-    <content><![CDATA[<h1 id="title-独一无二出现的次数"><a href="#title-独一无二出现的次数" class="headerlink" title="title:独一无二出现的次数"></a>title:独一无二出现的次数</h1><h3 id="题目：给你一个整数数组-arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回-true；否则返回-false。"><a href="#题目：给你一个整数数组-arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回-true；否则返回-false。" class="headerlink" title="题目：给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。"></a>题目：给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。</h3><a id="more"></a>
+    <title>vue七大属性</title>
+    <url>/2020/11/27/vue%E4%B8%83%E5%A4%A7%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="Vue七大属性"><a href="#Vue七大属性" class="headerlink" title="Vue七大属性"></a>Vue七大属性</h1><a id="more"></a>
 
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//核心思想:利用hashmap来统计数组中不同数字出现的次数，然后将map中的值存入一个集合values，通过set.addAll()再将集合values中不同的数字存入集合set中。最终比较values和set的长度。</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-el"><a href="#1-el" class="headerlink" title="1.el"></a>1.el</h2><p>获取dom对象</p>
+<h2 id="2-data"><a href="#2-data" class="headerlink" title="2.data"></a>2.data</h2><p>用于存放数据</p>
+<h3 id="2-1条件判断"><a href="#2-1条件判断" class="headerlink" title="2.1条件判断"></a>2.1条件判断</h3><h4 id="2-1-1-v-if"><a href="#2-1-1-v-if" class="headerlink" title="2.1.1 v-if"></a>2.1.1 v-if</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app3&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;seen&quot;</span>&gt;</span>现在你看到我了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>具体代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 独一无二出现的次数 </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        System.out.println(unique(arr));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">unique</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = arr.length;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;(length);</span><br><span class="line">        <span class="comment">//统计出现的不同的数字</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i :</span><br><span class="line">                arr) &#123;</span><br><span class="line">            map.put(i, map.getOrDefault(i, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将不同的数字存入一个集合</span></span><br><span class="line">        Collection&lt;Integer&gt; values = map.values();</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        set.addAll(values);</span><br><span class="line">        <span class="comment">//将map中的键存入set1集合中</span></span><br><span class="line">        Set set1 = map.keySet();</span><br><span class="line">        Iterator iter = set1.iterator();</span><br><span class="line">        <span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">            <span class="keyword">int</span> key = (<span class="keyword">int</span>) iter.next();</span><br><span class="line">            <span class="keyword">int</span> value = map.get(key);</span><br><span class="line">            System.out.print(<span class="string">&quot;数字&quot;</span>+key+<span class="string">&quot;出现了&quot;</span>+value+<span class="string">&quot;次，&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> values.size()==set.size();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app3 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app3&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        seen: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
+<h4 id="2-1-2-v-else"><a href="#2-1-2-v-else" class="headerlink" title="2.1.2 v-else"></a>2.1.2 v-else</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-if</span>=<span class="string">&quot;Math.random()&gt;0.5&quot;</span>&gt;</span></span><br><span class="line">    You can see me!</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">    you can not;</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2循环v-for"><a href="#2-2循环v-for" class="headerlink" title="2.2循环v-for"></a>2.2循环v-for</h3><p>html部分：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app4&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;todo in todos&quot;</span>&gt;</span></span><br><span class="line">            &#123;&#123;todo.text&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>js部分：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> app4 = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&#x27;#app4&#x27;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        todos: [</span><br><span class="line">            &#123;<span class="attr">text</span>: <span class="string">&#x27;学习JavaScript&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span>: <span class="string">&#x27;学习vue&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">text</span>: <span class="string">&#x27;整个大项目&#x27;</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-methods："><a href="#3-methods：" class="headerlink" title="3.methods："></a>3.methods：</h2><p>方法必须定义在Vue的methods的对象中</p>
+<h3 id="3-1-v-on事件绑定"><a href="#3-1-v-on事件绑定" class="headerlink" title="3.1 v-on事件绑定"></a>3.1 v-on事件绑定</h3><p>可以使用<strong>v-on</strong>指令监听DOM事件，并在出发时运行一些JavaScript代码</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;alert()&quot;</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">&#x27;hello Vue&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        alert: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            alert(<span class="built_in">this</span>.message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-v-model"><a href="#3-2-v-model" class="headerlink" title="3.2 v-model"></a>3.2 v-model</h3><p>你可以用v-model指令在表单<code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code> 及 <code>&lt;select&gt;</code> 元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 <code>v-model</code> 本质上不过是语法糖。它负责监听用户的输入事件以更新数据，并对一些极端场景进行一些特殊处理。</p>
+<p><strong>注：</strong><code>v-model</code> 会忽略所有表单元素的 <code>value</code>、<code>checked</code>、<code>selected</code> attribute 的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 <code>data</code> 选项中声明初始值。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;点击我&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>message:&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">&#x27;hello Vue&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-component"><a href="#4-component" class="headerlink" title="4.component"></a>4.component</h2><h3 id="4-1-全局注册组件："><a href="#4-1-全局注册组件：" class="headerlink" title="4.1 全局注册组件："></a>4.1 全局注册组件：</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//定义规则</span></span><br><span class="line">Vue.component(<span class="string">&#x27;my-component-name&#x27;</span>, &#123;</span><br><span class="line">  <span class="comment">// ... 选项 ...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>范例：</strong></p>
+<p>html部分：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">v-bind:item</span> = <span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>js部分：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//自定义组件</span></span><br><span class="line">Vue.component(<span class="string">&#x27;item&#x27;</span>,&#123;</span><br><span class="line">    props:[<span class="string">&#x27;item&#x27;</span>],<span class="comment">//</span></span><br><span class="line">    template: <span class="string">&#x27;&lt;li&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//vue实例</span></span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">&quot;#app&quot;</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">&#x27;hello Vue&#x27;</span>,</span><br><span class="line">        items:[<span class="string">&#x27;java&#x27;</span>,<span class="string">&#x27;vue&#x27;</span>,<span class="string">&#x27;linux&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-axios异步通信"><a href="#5-axios异步通信" class="headerlink" title="5.axios异步通信"></a>5.axios异步通信</h2><p>首先需要明白Vue的生命周期，主要还是利用Vue在模板渲染完毕后渲染数据发送请求，从而将数据展示页面。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190107221323124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21xaW5nbw==,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p>图中红色框内的内容称为钩子函数</p>
 ]]></content>
       <tags>
-        <tag>leetcode</tag>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>注解与反射</title>
+    <url>/2020/11/26/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p>Java 注解（Annotation）又称 Java 标注，是 JDK5.0 引入的一种注释机制。Java 语言中的类、方法、变量、参数和包等都可以被标注。和 Javadoc 不同，Java 标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java 虚拟机可以保留标注内容，在运行时可以获取到标注内容 。</p>
+<h2 id="内置注解："><a href="#内置注解：" class="headerlink" title="内置注解："></a>内置注解：</h2><p>1.@Override:定义于java.lang.Override。此注释只使用于修辞手法，表示一个方法声明打算重写超类中的另一个方法声明。</p>
+<p>2.@Deprecated：此注释可以用于修辞手法、属性、类；表示不推荐使用，</p>
+<p>3.@SuppressWarning:用于抑制编译时的警告信息，使用时需要附带参数。</p>
+<h2 id="元注解："><a href="#元注解：" class="headerlink" title="元注解："></a>元注解：</h2><p><strong>元注解用于注解其他注解</strong></p>
+<p>1.@Target：用于描述注解的作用范围</p>
+<p>2.@Retention：表示需要在什么级别保存该注解信息，用于描述注解的生命周期</p>
+<p>3.@Document：标记这个注解是否存于用户文档中</p>
+<p>4.@Inherited：用于描述该注解的继承性</p>
+<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>反射就是把java类中的各种成分映射成一个个的Java对象<br>例如：一个类有：成员变量、方法、构造方法、包等等信息，利用反射技术可以对一个类进行解剖，把个个组成部分映射成一个个对象。</p>
+<p><strong>Java反射机制提供的功能：</strong></p>
+<p>1.在运行时判断任意一个对象所属的类</p>
+<p>2.在运行时构造任意一个类的对像</p>
+<p>3.在运行时判断任意一个类所具有的成员变量和方法</p>
+<p>4.在运行时获取泛型信息</p>
+<p>5.在运行时调用任意一个对象的成员变量和方法</p>
+<p>6.在运行时处理注解</p>
+<p>7.生成动态代理</p>
+]]></content>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
@@ -565,6 +550,21 @@
 ]]></content>
       <tags>
         <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>独一无二出现的次数</title>
+    <url>/2020/11/27/%E7%8B%AC%E4%B8%80%E6%97%A0%E4%BA%8C%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/</url>
+    <content><![CDATA[<h1 id="title-独一无二出现的次数"><a href="#title-独一无二出现的次数" class="headerlink" title="title:独一无二出现的次数"></a>title:独一无二出现的次数</h1><h3 id="题目：给你一个整数数组-arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回-true；否则返回-false。"><a href="#题目：给你一个整数数组-arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回-true；否则返回-false。" class="headerlink" title="题目：给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。"></a>题目：给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。</h3><a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//核心思想:利用hashmap来统计数组中不同数字出现的次数，然后将map中的值存入一个集合values，通过set.addAll()再将集合values中不同的数字存入集合set中。最终比较values和set的长度。</span></span><br></pre></td></tr></table></figure>
+
+<p>具体代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 独一无二出现的次数 </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> arr[] = &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">        System.out.println(unique(arr));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">unique</span><span class="params">(<span class="keyword">int</span> arr[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = arr.length;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;(length);</span><br><span class="line">        <span class="comment">//统计出现的不同的数字</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i :</span><br><span class="line">                arr) &#123;</span><br><span class="line">            map.put(i, map.getOrDefault(i, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将不同的数字存入一个集合</span></span><br><span class="line">        Collection&lt;Integer&gt; values = map.values();</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        set.addAll(values);</span><br><span class="line">        <span class="comment">//将map中的键存入set1集合中</span></span><br><span class="line">        Set set1 = map.keySet();</span><br><span class="line">        Iterator iter = set1.iterator();</span><br><span class="line">        <span class="keyword">while</span>(iter.hasNext())&#123;</span><br><span class="line">            <span class="keyword">int</span> key = (<span class="keyword">int</span>) iter.next();</span><br><span class="line">            <span class="keyword">int</span> value = map.get(key);</span><br><span class="line">            System.out.print(<span class="string">&quot;数字&quot;</span>+key+<span class="string">&quot;出现了&quot;</span>+value+<span class="string">&quot;次，&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> values.size()==set.size();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
       </tags>
   </entry>
 </search>
