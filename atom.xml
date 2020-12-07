@@ -6,7 +6,7 @@
   <link href="http://wangweiwen0515.github.io/atom.xml" rel="self"/>
   
   <link href="http://wangweiwen0515.github.io/"/>
-  <updated>2020-12-07T02:47:41.423Z</updated>
+  <updated>2020-12-07T02:55:32.823Z</updated>
   <id>http://wangweiwen0515.github.io/</id>
   
   <author>
@@ -17,21 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>text</title>
+    <link href="http://wangweiwen0515.github.io/2020/12/07/text/"/>
+    <id>http://wangweiwen0515.github.io/2020/12/07/text/</id>
+    <published>2020-12-07T02:55:32.000Z</published>
+    <updated>2020-12-07T02:55:32.823Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>跨域问题</title>
     <link href="http://wangweiwen0515.github.io/2020/12/07/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/"/>
     <id>http://wangweiwen0515.github.io/2020/12/07/%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</id>
     <published>2020-12-07T02:45:18.000Z</published>
-    <updated>2020-12-07T02:47:41.423Z</updated>
+    <updated>2020-12-07T02:52:40.772Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;1.添加一个配置文件&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span</summary>
-        
-      
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; com.config;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.springframework.context.annotation.Configuration;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.springframework.web.servlet.config.annotation.CorsRegistry;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Configuration&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CorsConfig&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;WebMvcConfigurerAdapter&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addCorsMappings&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(CorsRegistry registry)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        registry.addMapping(&lt;span class=&quot;string&quot;&gt;&amp;quot;/**&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                .allowedOriginPatterns(&lt;span class=&quot;string&quot;&gt;&amp;quot;*&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                .allowCredentials(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                .allowedMethods(&lt;span class=&quot;string&quot;&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;quot;DELETE&amp;quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;quot;PUT&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                .maxAge(&lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -45,7 +52,7 @@
     <link href="http://wangweiwen0515.github.io/2020/12/05/springboot%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"/>
     <id>http://wangweiwen0515.github.io/2020/12/05/springboot%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/</id>
     <published>2020-12-05T07:33:19.000Z</published>
-    <updated>2020-12-07T02:47:48.833Z</updated>
+    <updated>2020-12-07T03:05:56.278Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;1-配置数据库的连接&quot;&gt;&lt;a href=&quot;#1-配置数据库的连接&quot; class=&quot;headerlink&quot; title=&quot;1.配置数据库的连接&quot;&gt;&lt;/a&gt;1.配置数据库的连接&lt;/h2&gt;&lt;p&gt;打开新建好的springboot项目，再src&amp;gt;main&amp;gt;resource目录下新建一个application.yml的文件来填写数据库连接配置文件&lt;/p&gt;</summary>
@@ -200,7 +207,7 @@
     
     <summary type="html">&lt;h1 id=&quot;dom&quot;&gt;&lt;a href=&quot;#dom&quot; class=&quot;headerlink&quot; title=&quot;dom&quot;&gt;&lt;/a&gt;dom&lt;/h1&gt;&lt;h2 id=&quot;dom简介&quot;&gt;&lt;a href=&quot;#dom简介&quot; class=&quot;headerlink&quot; title=&quot;dom简介&quot;&gt;&lt;/a&gt;dom简介&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;当网页被加载时，浏览器会创建页面的文档对象模型（Document Object MOdel）。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;HTML DOM&lt;/strong&gt; 模型被构造为&lt;strong&gt;对象&lt;/strong&gt;的树：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;C:\Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201019110038468.png&quot; alt=&quot;image-20201019110038468&quot;&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;img src=&quot;/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201019110038468.png&quot; alt=&quot;image-20201019110038468&quot;&gt;&lt;/p&gt;</summary>
     
     
     

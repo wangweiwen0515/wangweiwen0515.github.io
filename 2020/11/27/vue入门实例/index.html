@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="waven&#39;s blog">
 <meta property="og:description" content="title:vue入门实例">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/17356/AppData/Roaming/Typora/typora-user-images/image-20201028104545682.png">
-<meta property="og:image" content="c:/Users/17356/AppData/Roaming/Typora/typora-user-images/image-20201028203238970.png">
+<meta property="og:image" content="http://wangweiwen0515.github.io/.io//Users/17356/AppData/Roaming/Typora/typora-user-images/image-20201028104545682.png">
+<meta property="og:image" content="http://wangweiwen0515.github.io/.io//Users/17356/AppData/Roaming/Typora/typora-user-images/image-20201028203238970.png">
 <meta property="article:published_time" content="2020-11-27T10:27:06.000Z">
 <meta property="article:modified_time" content="2020-11-27T10:31:02.379Z">
 <meta property="article:author" content="waven">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/17356/AppData/Roaming/Typora/typora-user-images/image-20201028104545682.png">
+<meta name="twitter:image" content="http://wangweiwen0515.github.io/.io//Users/17356/AppData/Roaming/Typora/typora-user-images/image-20201028104545682.png">
 
 <link rel="canonical" href="http://wangweiwen0515.github.io/2020/11/27/vue%E5%85%A5%E9%97%A8%E5%AE%9E%E4%BE%8B/">
 
@@ -249,7 +249,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello Vue!</span><br></pre></td></tr></table></figure>
 
 <h2 id="组件化应用构建"><a href="#组件化应用构建" class="headerlink" title="组件化应用构建"></a>组件化应用构建</h2><p>组件系统是Vue的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。仔细想想，几乎任意类型的应用界面都可以抽象为一个组件树：</p>
-<p><img src="C:\Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201028104545682.png" alt="image-20201028104545682"></p>
+<p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201028104545682.png" alt="image-20201028104545682"></p>
 <p>在Vue里，一个组件本质上是一个拥有预定义选项的一个Vue实例。在Vue中注册组件很简单：</p>
 <p>html部分：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app7&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">             现在我们为每个 todo-item 提供 todo 对象</span></span><br><span class="line"><span class="comment">            todo 对象是变量，即其内容可以是动态的。</span></span><br><span class="line"><span class="comment">            我们也需要为每个组件提供一个“key”，</span></span><br><span class="line"><span class="comment">             --&gt;</span></span><br><span class="line">             &lt;todo-item</span><br><span class="line">                v-for=&quot;item in groceryList&quot;</span><br><span class="line">                v-bind:todo=&quot;item&quot;</span><br><span class="line">                v-bind:key=&quot;item.id&quot;</span><br><span class="line">            &gt;<span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -280,7 +280,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">  &#125;,</span><br><span class="line">  created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;a is: &#x27;</span> + <span class="built_in">this</span>.a)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// =&gt; &quot;a is: 1&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>也有一些其他的钩子，在实例生命周期的不同阶段被调用，如<strong>mounted、updated、destroyed</strong>。生命周期钩子的this上下文指向调用它的Vue实例。</p>
-<h2 id="生命周期图"><a href="#生命周期图" class="headerlink" title="生命周期图"></a>生命周期图</h2><p><img src="C:\Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201028203238970.png" alt="image-20201028203238970"></p>
+<h2 id="生命周期图"><a href="#生命周期图" class="headerlink" title="生命周期图"></a>生命周期图</h2><p><img src="/.io//Users\17356\AppData\Roaming\Typora\typora-user-images\image-20201028203238970.png" alt="image-20201028203238970"></p>
 
     </div>
 
@@ -399,7 +399,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
