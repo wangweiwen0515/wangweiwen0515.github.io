@@ -52,7 +52,7 @@
     <link href="http://wangweiwen0515.github.io/2020/12/05/springboot%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/"/>
     <id>http://wangweiwen0515.github.io/2020/12/05/springboot%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B/</id>
     <published>2020-12-05T07:33:19.000Z</published>
-    <updated>2020-12-07T07:14:52.436Z</updated>
+    <updated>2020-12-07T07:21:45.824Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;1-配置数据库的连接&quot;&gt;&lt;a href=&quot;#1-配置数据库的连接&quot; class=&quot;headerlink&quot; title=&quot;1.配置数据库的连接&quot;&gt;&lt;/a&gt;1.配置数据库的连接&lt;/h2&gt;&lt;p&gt;打开新建好的springboot项目，再src&amp;gt;main&amp;gt;resource目录下新建一个application.yml的文件来填写数据库连接配置文件&lt;/p&gt;</summary>
